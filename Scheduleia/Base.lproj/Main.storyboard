@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="945" id="aaa-nT-pmg"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-Ch-kHZ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-Ch-kHZ">
                                 <rect key="frame" x="36" y="521" width="341" height="50"/>
                                 <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -207,7 +207,7 @@
                                 <color key="textColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc@123.com" borderStyle="roundedRect" minimumFontSize="50" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-pQ-NFh">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="abc@123.com" borderStyle="roundedRect" minimumFontSize="50" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-pQ-NFh">
                                 <rect key="frame" x="36" y="350" width="341" height="50"/>
                                 <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -325,7 +325,7 @@
                                     <constraint firstAttribute="height" constant="945" id="JgX-Wz-DG7"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="asc-3Y-XCU">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="asc-3Y-XCU">
                                 <rect key="frame" x="36" y="521" width="341" height="50"/>
                                 <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                                 <constraints>
@@ -352,7 +352,7 @@
                                 <color key="textColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="r7F-ob-heq">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="r7F-ob-heq">
                                 <rect key="frame" x="36" y="350" width="341" height="50"/>
                                 <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
