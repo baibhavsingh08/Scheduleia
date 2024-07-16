@@ -29,6 +29,12 @@ class MainViewController: UIViewController {
             
         } catch let signOutError as NSError {
           print("Error signing out: %@", signOutError)
+            let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+
+            alert.addAction(action)
+            self.present(alert, animated: true)
         }
     }
     
