@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "textBar.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
