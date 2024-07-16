@@ -25,7 +25,7 @@ class LoginViewController: UIViewController {
         
         if let email = emailTextField.text , let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-                guard let strongSelf = self else { return }
+                guard let _ = self else { return }
                 
                 if let e = error {
                     print("error");
