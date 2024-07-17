@@ -24,13 +24,13 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="715"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pmp-ue-qCV" userLabel="TopView">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="237.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="178"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todo-icon-1024x1024-8p9cd4g6" translatesAutoresizingMaskIntoConstraints="NO" id="nTl-rI-rBz">
-                                                <rect key="frame" x="121.66666666666669" y="44" width="150" height="150"/>
+                                                <rect key="frame" x="136.66666666666666" y="39" width="119.99999999999997" height="100"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="81W-PE-Tue"/>
-                                                    <constraint firstAttribute="width" constant="150" id="OY6-Bc-1kj"/>
+                                                    <constraint firstAttribute="width" constant="120" id="AVC-QT-smp"/>
+                                                    <constraint firstAttribute="height" constant="100" id="KfP-kZ-Ffq"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -40,10 +40,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isz-pB-xXv" userLabel="MiddleView">
-                                        <rect key="frame" x="0.0" y="238.66666666666669" width="393" height="237.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="179" width="393" height="178"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scheduleia" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9w1-lW-3ou">
-                                                <rect key="frame" x="61.666666666666657" y="90" width="270" height="58"/>
+                                                <rect key="frame" x="61.666666666666657" y="60" width="270" height="58"/>
                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                                 <color key="textColor" red="0.50980395079999996" green="0.41568624970000001" blue="0.74117648599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
@@ -55,89 +55,60 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="trp-LX-R2q" userLabel="BottomView">
-                                        <rect key="frame" x="0.0" y="477.33333333333343" width="393" height="237.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="358" width="393" height="178"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SbM-pN-xoP">
-                                                <rect key="frame" x="0.0" y="0.0" width="393" height="237.66666666666666"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urz-x1-T7X">
-                                                        <rect key="frame" x="0.0" y="0.0" width="393" height="119"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4t-nS-kqw">
-                                                                <rect key="frame" x="50" y="29.333333333333261" width="293" height="60.333333333333343"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Log In">
-                                                                    <backgroundConfiguration key="background">
-                                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </backgroundConfiguration>
-                                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <segue destination="nd4-k5-hug" kind="show" id="dcQ-Os-75g"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="centerX" secondItem="Urz-x1-T7X" secondAttribute="centerX" id="6mP-bo-wfW"/>
-                                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="centerX" secondItem="Urz-x1-T7X" secondAttribute="centerX" id="7Hk-be-OF8"/>
-                                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="leading" secondItem="Urz-x1-T7X" secondAttribute="leading" constant="50" id="OQo-l7-GC7"/>
-                                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="centerY" secondItem="Urz-x1-T7X" secondAttribute="centerY" id="dwB-DY-dkl"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sep-9i-X6U">
-                                                        <rect key="frame" x="0.0" y="119" width="393" height="118.66666666666669"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-TO-4ZH">
-                                                                <rect key="frame" x="50" y="29.000000000000004" width="293" height="60.333333333333343"/>
-                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" title="Register">
-                                                                    <backgroundConfiguration key="background">
-                                                                        <color key="backgroundColor" red="0.32549020649999999" green="0.26666668059999998" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                    </backgroundConfiguration>
-                                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
-                                                                </buttonConfiguration>
-                                                                <connections>
-                                                                    <segue destination="xPS-F5-2ie" kind="show" id="TkJ-AV-xwJ"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerX" secondItem="sep-9i-X6U" secondAttribute="centerX" id="9jx-Wp-UUI"/>
-                                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerX" secondItem="sep-9i-X6U" secondAttribute="centerX" id="b36-U2-rHf"/>
-                                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerX" secondItem="sep-9i-X6U" secondAttribute="centerX" id="jRE-oq-WL9"/>
-                                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerY" secondItem="sep-9i-X6U" secondAttribute="centerY" id="ny0-sa-mxQ"/>
-                                                            <constraint firstAttribute="trailing" secondItem="bNq-TO-4ZH" secondAttribute="trailing" constant="50" id="tWq-vn-apb"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="Urz-x1-T7X" firstAttribute="leading" secondItem="SbM-pN-xoP" secondAttribute="leading" id="2x0-EJ-jvz"/>
-                                                    <constraint firstItem="Urz-x1-T7X" firstAttribute="top" secondItem="SbM-pN-xoP" secondAttribute="top" id="AAR-B0-7qj"/>
-                                                    <constraint firstAttribute="trailing" secondItem="sep-9i-X6U" secondAttribute="trailing" id="FkE-Lm-IzC"/>
-                                                    <constraint firstItem="sep-9i-X6U" firstAttribute="leading" secondItem="SbM-pN-xoP" secondAttribute="leading" id="Hmw-gX-TGc"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Urz-x1-T7X" secondAttribute="trailing" id="JUH-OC-NWj"/>
-                                                    <constraint firstAttribute="bottom" secondItem="sep-9i-X6U" secondAttribute="bottom" id="Ola-Z7-NLQ"/>
-                                                    <constraint firstItem="sep-9i-X6U" firstAttribute="top" secondItem="Urz-x1-T7X" secondAttribute="bottom" id="PnN-11-vaM"/>
-                                                    <constraint firstItem="Urz-x1-T7X" firstAttribute="leading" secondItem="SbM-pN-xoP" secondAttribute="leading" id="Sg9-DW-9Vs"/>
-                                                    <constraint firstItem="Urz-x1-T7X" firstAttribute="top" secondItem="SbM-pN-xoP" secondAttribute="top" id="WTX-db-3Lv"/>
-                                                    <constraint firstItem="sep-9i-X6U" firstAttribute="top" secondItem="Urz-x1-T7X" secondAttribute="bottom" id="lFs-eH-mjg"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Urz-x1-T7X" secondAttribute="trailing" id="tY6-Zu-d8F"/>
-                                                </constraints>
-                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4t-nS-kqw">
+                                                <rect key="frame" x="50" y="59" width="293" height="60.333333333333343"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Log In">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="nd4-k5-hug" kind="show" id="dcQ-Os-75g"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="SbM-pN-xoP" secondAttribute="bottom" id="FUr-p4-gUT"/>
-                                            <constraint firstAttribute="trailing" secondItem="SbM-pN-xoP" secondAttribute="trailing" id="W2j-qE-vCG"/>
-                                            <constraint firstItem="SbM-pN-xoP" firstAttribute="top" secondItem="trp-LX-R2q" secondAttribute="top" id="mHo-A4-iDo"/>
-                                            <constraint firstItem="SbM-pN-xoP" firstAttribute="leading" secondItem="trp-LX-R2q" secondAttribute="leading" id="wAg-Pl-Sgf"/>
+                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="centerY" secondItem="trp-LX-R2q" secondAttribute="centerY" id="3wO-mP-gKm"/>
+                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="centerX" secondItem="trp-LX-R2q" secondAttribute="centerX" id="Kgj-vv-XAX"/>
+                                            <constraint firstItem="t4t-nS-kqw" firstAttribute="leading" secondItem="trp-LX-R2q" secondAttribute="leading" constant="50" id="U4i-A5-gdf"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sep-9i-X6U">
+                                        <rect key="frame" x="0.0" y="537" width="393" height="178"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-TO-4ZH">
+                                                <rect key="frame" x="50" y="59" width="293" height="60.333333333333343"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Register">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.32549020649999999" green="0.26666668059999998" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <segue destination="xPS-F5-2ie" kind="show" id="TkJ-AV-xwJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerX" secondItem="sep-9i-X6U" secondAttribute="centerX" id="LOF-4J-TbP"/>
+                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="leading" secondItem="sep-9i-X6U" secondAttribute="leading" constant="50" id="lOV-Bd-7yp"/>
+                                            <constraint firstItem="bNq-TO-4ZH" firstAttribute="centerY" secondItem="sep-9i-X6U" secondAttribute="centerY" id="uVi-Mh-n4F"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="pmp-ue-qCV" firstAttribute="leading" secondItem="isz-pB-xXv" secondAttribute="leading" id="JRC-o8-ZA9"/>
+                                    <constraint firstItem="sep-9i-X6U" firstAttribute="leading" secondItem="0tl-0m-XZA" secondAttribute="leading" id="aKM-A2-xfZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="sep-9i-X6U" secondAttribute="trailing" id="cbv-T5-Kro"/>
                                     <constraint firstItem="isz-pB-xXv" firstAttribute="leading" secondItem="trp-LX-R2q" secondAttribute="leading" id="mTV-8V-FO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="sep-9i-X6U" secondAttribute="bottom" id="rfh-iB-jia"/>
                                     <constraint firstItem="pmp-ue-qCV" firstAttribute="leading" secondItem="0tl-0m-XZA" secondAttribute="leading" id="sld-cU-uAF"/>
                                 </constraints>
                             </stackView>
