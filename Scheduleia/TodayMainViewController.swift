@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class TodayMainViewController: UIViewController {
     
+    var model = [TodoModel]()
+    
     @IBOutlet weak var tableView: UITableView!
     
 //    let tableView: UITableView = {
@@ -25,6 +27,10 @@ class TodayMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for _ in 1...10{
+            model.append(TodoModel(userName: "aa", password: "aa", decription: "aa", heading: "aa", deadline: "aa"))
+        }
 
         title = "Today's Tasks"
         navigationItem.hidesBackButton = true
@@ -43,8 +49,6 @@ class TodayMainViewController: UIViewController {
                 
         button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
         
-        
-                
         if let tabBarHeight = tabBarController?.tabBar.frame.size.height {
                     button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(50 + tabBarHeight)).isActive = true
                 }
@@ -63,7 +67,17 @@ class TodayMainViewController: UIViewController {
     }
     
     @objc func buttonPressed(){
-        print("hii")
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "testVC")
+        vc.navigationItem.title = "AAA"
+        
+        let label = UILabel()
+        label.text = "Hii"
+        label.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
+        vc.view.addSubview(label)
+        
+        navigationController?.pushViewController(vc, animated: true)
+//        tableView.reloadData()
     }
     
 }
@@ -72,13 +86,24 @@ class TodayMainViewController: UIViewController {
 
 extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return model.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "testVC")
+        vc.navigationItem.title = "AAA"
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let model  = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
-//        cell.textLabel?.text = "aa"
+        cell.deadlineLabel.text = model[indexPath.row].decription
+        cell.headingLabel.text = model[indexPath.row].heading
+        cell.deadlineLabel.text = model[indexPath.row].deadline
+//        cell.description = model[indexPath.row].decription
+        
         return cell
     }
     
