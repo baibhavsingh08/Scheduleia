@@ -65,11 +65,11 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t4t-nS-kqw">
                                                                 <rect key="frame" x="50" y="25.000000000000004" width="293" height="60.333333333333343"/>
-                                                                <color key="tintColor" red="0.50980395079999996" green="0.41568624970000001" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
                                                                     <backgroundConfiguration key="background">
-                                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.86666667460000002" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </backgroundConfiguration>
                                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                                                 </buttonConfiguration>
@@ -90,11 +90,11 @@
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNq-TO-4ZH">
                                                                 <rect key="frame" x="50" y="24.666666666666632" width="293" height="60.333333333333343"/>
-                                                                <color key="tintColor" red="0.50980395079999996" green="0.41568624970000001" blue="0.74509805439999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                                                     <backgroundConfiguration key="background">
-                                                                        <color key="backgroundColor" red="0.80392158030000005" green="0.86666667460000002" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                        <color key="backgroundColor" red="0.32549020649999999" green="0.26666668059999998" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     </backgroundConfiguration>
                                                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                                                 </buttonConfiguration>
@@ -184,7 +184,7 @@
                                     <constraint firstAttribute="height" constant="50" id="u4Q-kR-J5d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCT-SE-9T0">
                                 <rect key="frame" x="16" y="296" width="135" height="35"/>
@@ -211,12 +211,12 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-5Y-HK8">
-                                <rect key="frame" x="109" y="657" width="174" height="72"/>
-                                <color key="tintColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="100" y="657" width="193" height="72"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.80000001190000003" green="0.85882353779999998" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 </buttonConfiguration>
@@ -232,7 +232,6 @@
                             <constraint firstItem="J9z-aS-iID" firstAttribute="centerX" secondItem="mAG-Ah-m6A" secondAttribute="centerX" id="5Vg-T4-vSl"/>
                             <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="uI1-HK-g6h" secondAttribute="trailing" constant="178" id="872-Xx-cxK"/>
                             <constraint firstItem="Tge-pQ-NFh" firstAttribute="leading" secondItem="UlD-oC-ryX" secondAttribute="leading" constant="36" id="Abn-G4-532"/>
-                            <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="jZP-5Y-HK8" secondAttribute="trailing" constant="110" id="CTi-k9-wma"/>
                             <constraint firstItem="J9z-aS-iID" firstAttribute="top" secondItem="UlD-oC-ryX" secondAttribute="top" id="ILV-WZ-z7U"/>
                             <constraint firstItem="VCT-SE-9T0" firstAttribute="top" secondItem="5W6-D0-nH2" secondAttribute="top" constant="296" id="Qa3-i1-gid"/>
                             <constraint firstItem="uI1-HK-g6h" firstAttribute="leading" secondItem="VCT-SE-9T0" secondAttribute="leading" id="T9Q-gg-RNq"/>
@@ -240,7 +239,6 @@
                             <constraint firstItem="9AJ-Ch-kHZ" firstAttribute="top" secondItem="uI1-HK-g6h" secondAttribute="bottom" constant="20" id="eLG-WH-8J6"/>
                             <constraint firstItem="Tge-pQ-NFh" firstAttribute="top" secondItem="VCT-SE-9T0" secondAttribute="bottom" constant="19" id="hqz-IV-TsL"/>
                             <constraint firstItem="Tge-pQ-NFh" firstAttribute="trailing" secondItem="5W6-D0-nH2" secondAttribute="trailingMargin" id="jKT-yb-hYb"/>
-                            <constraint firstItem="jZP-5Y-HK8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UlD-oC-ryX" secondAttribute="leading" id="kXD-dK-yMB"/>
                             <constraint firstAttribute="bottom" secondItem="mAG-Ah-m6A" secondAttribute="bottom" id="lHm-z8-zcX"/>
                             <constraint firstItem="9AJ-Ch-kHZ" firstAttribute="trailing" secondItem="Tge-pQ-NFh" secondAttribute="trailing" id="mYk-6e-kj0"/>
                             <constraint firstAttribute="bottom" secondItem="uI1-HK-g6h" secondAttribute="bottom" constant="351" id="pTP-u7-Hw4"/>
@@ -248,9 +246,11 @@
                             <constraint firstItem="UlD-oC-ryX" firstAttribute="bottom" secondItem="jZP-5Y-HK8" secondAttribute="bottom" constant="89" id="rgA-Su-XtI"/>
                             <constraint firstItem="mAG-Ah-m6A" firstAttribute="top" secondItem="5W6-D0-nH2" secondAttribute="top" id="siY-je-q0O"/>
                             <constraint firstItem="J9z-aS-iID" firstAttribute="centerX" secondItem="5W6-D0-nH2" secondAttribute="centerX" id="ti6-g1-fFi"/>
+                            <constraint firstItem="jZP-5Y-HK8" firstAttribute="leading" secondItem="UlD-oC-ryX" secondAttribute="leading" constant="100" id="tnO-dj-f3W"/>
                             <constraint firstItem="mAG-Ah-m6A" firstAttribute="trailing" secondItem="UlD-oC-ryX" secondAttribute="trailing" id="vqn-0p-vcx"/>
                             <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="VCT-SE-9T0" secondAttribute="trailing" constant="242" id="y12-gv-jcc"/>
                             <constraint firstItem="uI1-HK-g6h" firstAttribute="top" secondItem="Tge-pQ-NFh" secondAttribute="bottom" constant="66" id="zTc-yT-5Yg"/>
+                            <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="jZP-5Y-HK8" secondAttribute="trailing" constant="100" id="zaW-wF-NWX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GL5-Sf-7Zv"/>
@@ -287,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW4-yJ-IbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3880" y="149"/>
+            <point key="canvasLocation" x="3878.6259541984732" y="148.59154929577466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Oc-lp-8IJ">
@@ -299,6 +299,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -328,7 +332,7 @@
                                     <constraint firstAttribute="height" constant="50" id="GUI-xE-1Jo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDQ-4l-IXg">
                                 <rect key="frame" x="16" y="296" width="135" height="35"/>
@@ -355,12 +359,12 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv8-F2-8ka">
-                                <rect key="frame" x="82" y="662" width="229" height="72"/>
-                                <color key="tintColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="82" y="660" width="229" height="72"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                     <backgroundConfiguration key="background">
-                                        <color key="backgroundColor" red="0.80000001190000003" green="0.85882353779999998" blue="0.98039215800000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </backgroundConfiguration>
                                     <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
                                 </buttonConfiguration>

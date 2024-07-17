@@ -45,9 +45,6 @@ class RegisterViewController: UIViewController {
                         self.passwordTextField.text = ""
                         })
 
-                        
-                    
-                    
                     alert.addAction(action)
                     self.present(alert, animated: true)
                 }else{

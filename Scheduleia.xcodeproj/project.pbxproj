@@ -23,6 +23,8 @@
 		B95B15352C468CD300E6F104 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B95B15342C468CD300E6F104 /* FirebaseFirestoreSwift */; };
 		B95B15372C468DB700E6F104 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15362C468DB700E6F104 /* RegisterViewController.swift */; };
 		B95B15392C46979500E6F104 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15382C46979500E6F104 /* MainViewController.swift */; };
+		B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */; };
+		B95B153D2C47910D00E6F104 /* TodoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */; };
 		B9ABDF752C464B0900D2B493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF742C464B0900D2B493 /* AppDelegate.swift */; };
 		B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */; };
 		B9ABDF792C464B0900D2B493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF782C464B0900D2B493 /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		B95B151B2C468B2400E6F104 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B95B15362C468DB700E6F104 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B95B15382C46979500E6F104 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; wrapsLines = 0; };
+		B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B9ABDF712C464B0900D2B493 /* Scheduleia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduleia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ABDF742C464B0900D2B493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 		B95B15182C46804500E6F104 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */,
+				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
 				B95B15382C46979500E6F104 /* MainViewController.swift */,
 				B95B15192C46820B00E6F104 /* LoginViewController.swift */,
 				B95B15362C468DB700E6F104 /* RegisterViewController.swift */,
@@ -190,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9ABDF812C464B0A00D2B493 /* Assets.xcassets in Resources */,
+				B95B153D2C47910D00E6F104 /* TodoItemTableViewCell.xib in Resources */,
 				B95B151C2C468B2400E6F104 /* GoogleService-Info.plist in Resources */,
 				B9ABDF842C464B0A00D2B493 /* Base in Resources */,
 				B9ABDF7C2C464B0900D2B493 /* Base in Resources */,
@@ -209,6 +216,7 @@
 				B9ABDF7F2C464B0900D2B493 /* Scheduleia.xcdatamodeld in Sources */,
 				B95B15372C468DB700E6F104 /* RegisterViewController.swift in Sources */,
 				B95B151A2C46820B00E6F104 /* LoginViewController.swift in Sources */,
+				B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */,
 				B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
