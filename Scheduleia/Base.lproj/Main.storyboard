@@ -216,9 +216,7 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="VCT-SE-9T0" firstAttribute="leading" secondItem="LiC-td-0wa" secondAttribute="leading" constant="10" id="0SI-0i-9lM"/>
                                             <constraint firstAttribute="trailing" secondItem="VCT-SE-9T0" secondAttribute="trailing" id="F9C-Od-Wb9"/>
-                                            <constraint firstItem="VCT-SE-9T0" firstAttribute="leading" secondItem="LiC-td-0wa" secondAttribute="leading" constant="10" id="M4Q-Sf-mTx"/>
                                             <constraint firstItem="VCT-SE-9T0" firstAttribute="leading" secondItem="LiC-td-0wa" secondAttribute="leading" id="mlI-YQ-bNi"/>
                                         </constraints>
                                     </stackView>
@@ -338,7 +336,7 @@
                         <viewLayoutGuide key="safeArea" id="wX5-vS-2Kn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="All tasks" selectedImage="allTasks" id="2fB-My-2xq"/>
+                    <tabBarItem key="tabBarItem" title="All tasks" image="allTasks" selectedImage="allTasks" id="2fB-My-2xq"/>
                     <navigationItem key="navigationItem" title="All Tasks" id="P11-Z2-cRd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="al3-rq-gQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -354,20 +352,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-sC-Lb6">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="158" width="393" height="611"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-fY-sFg">
+                                <rect key="frame" x="10" y="103" width="249" height="45"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Ah-Ofe">
+                                        <rect key="frame" x="0.0" y="0.0" width="146.66666666666666" height="45"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-aw-zv2">
+                                        <rect key="frame" x="146.66666666666666" y="0.0" width="102.33333333333334" height="45"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="40"/>
+                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0UM-91-kx4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="top" secondItem="0UM-91-kx4" secondAttribute="top" id="CcY-qF-NzS"/>
-                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="leading" secondItem="0UM-91-kx4" secondAttribute="leading" id="HJb-1S-J5x"/>
-                            <constraint firstItem="0UM-91-kx4" firstAttribute="bottom" secondItem="dTc-sC-Lb6" secondAttribute="bottom" id="Zx1-Lv-5YT"/>
-                            <constraint firstItem="0UM-91-kx4" firstAttribute="trailing" secondItem="dTc-sC-Lb6" secondAttribute="trailing" id="x5g-vy-BFJ"/>
+                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="leading" secondItem="0UM-91-kx4" secondAttribute="leading" id="99K-7V-zyf"/>
+                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="top" secondItem="yx2-fY-sFg" secondAttribute="bottom" constant="10" id="Edt-1G-Hi3"/>
+                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="trailing" secondItem="0UM-91-kx4" secondAttribute="trailing" id="GzB-L7-V5N"/>
+                            <constraint firstItem="yx2-fY-sFg" firstAttribute="top" secondItem="0UM-91-kx4" secondAttribute="top" id="T7G-hD-jec"/>
+                            <constraint firstItem="yx2-fY-sFg" firstAttribute="leading" secondItem="0UM-91-kx4" secondAttribute="leading" constant="10" id="dJD-W2-08f"/>
+                            <constraint firstItem="dTc-sC-Lb6" firstAttribute="bottom" secondItem="0UM-91-kx4" secondAttribute="bottom" id="w04-ga-pBW"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="today" id="pye-cq-Z8y"/>
+                    <tabBarItem key="tabBarItem" title="Today's Tasks" image="today" selectedImage="today" id="pye-cq-Z8y"/>
                     <navigationItem key="navigationItem" title="Today's Tasks" id="2aA-QK-Ovy"/>
                     <connections>
                         <outlet property="tableView" destination="dTc-sC-Lb6" id="KE5-HO-CIS"/>
@@ -375,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRY-uV-Iq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8558.0152671755714" y="-259.15492957746483"/>
+            <point key="canvasLocation" x="8556.4885496183197" y="-259.15492957746483"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="OEh-79-UO4">
@@ -590,7 +607,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8Gu-nx-gnW"/>
+        <segue reference="Llu-ry-6an"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
