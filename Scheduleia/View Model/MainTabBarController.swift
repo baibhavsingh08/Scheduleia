@@ -6,24 +6,35 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.hidesBackButton = true
 
         // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
+    @IBAction func logoutButtonpressed(_ sender: Any) {
+        
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+            navigationController?.popToRootViewController(animated: true)
+            
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+            let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
     }
-    */
 
 }
