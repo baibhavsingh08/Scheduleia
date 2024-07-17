@@ -25,6 +25,9 @@
 		B95B15392C46979500E6F104 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15382C46979500E6F104 /* MainViewController.swift */; };
 		B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */; };
 		B95B153D2C47910D00E6F104 /* TodoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */; };
+		B95B153F2C47A59500E6F104 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153E2C47A59500E6F104 /* MainTabBarController.swift */; };
+		B95B15412C47A73C00E6F104 /* TodayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */; };
+		B95B15432C47A76A00E6F104 /* AllTaskMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */; };
 		B9ABDF752C464B0900D2B493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF742C464B0900D2B493 /* AppDelegate.swift */; };
 		B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */; };
 		B9ABDF792C464B0900D2B493 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF782C464B0900D2B493 /* ViewController.swift */; };
@@ -41,6 +44,9 @@
 		B95B15382C46979500E6F104 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; wrapsLines = 0; };
 		B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		B95B153E2C47A59500E6F104 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMainViewController.swift; path = Scheduleia/TodayMainViewController.swift; sourceTree = SOURCE_ROOT; };
+		B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTaskMainViewController.swift; sourceTree = "<group>"; };
 		B9ABDF712C464B0900D2B493 /* Scheduleia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduleia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ABDF742C464B0900D2B493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,12 +84,15 @@
 		B95B15182C46804500E6F104 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */,
+				B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */,
 				B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */,
 				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
 				B95B15382C46979500E6F104 /* MainViewController.swift */,
 				B95B15192C46820B00E6F104 /* LoginViewController.swift */,
 				B95B15362C468DB700E6F104 /* RegisterViewController.swift */,
 				B9ABDF782C464B0900D2B493 /* ViewController.swift */,
+				B95B153E2C47A59500E6F104 /* MainTabBarController.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -211,11 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B95B15392C46979500E6F104 /* MainViewController.swift in Sources */,
+				B95B15432C47A76A00E6F104 /* AllTaskMainViewController.swift in Sources */,
 				B9ABDF792C464B0900D2B493 /* ViewController.swift in Sources */,
+				B95B153F2C47A59500E6F104 /* MainTabBarController.swift in Sources */,
 				B9ABDF752C464B0900D2B493 /* AppDelegate.swift in Sources */,
 				B9ABDF7F2C464B0900D2B493 /* Scheduleia.xcdatamodeld in Sources */,
 				B95B15372C468DB700E6F104 /* RegisterViewController.swift in Sources */,
 				B95B151A2C46820B00E6F104 /* LoginViewController.swift in Sources */,
+				B95B15412C47A73C00E6F104 /* TodayMainViewController.swift in Sources */,
 				B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */,
 				B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */,
 			);

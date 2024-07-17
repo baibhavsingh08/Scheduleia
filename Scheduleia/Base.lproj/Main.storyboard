@@ -27,7 +27,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="220.33333333333334"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="todo-icon-1024x1024-8p9cd4g6" translatesAutoresizingMaskIntoConstraints="NO" id="nTl-rI-rBz">
-                                                <rect key="frame" x="121.66666666666669" y="35.333333333333343" width="150" height="150"/>
+                                                <rect key="frame" x="121.66666666666669" y="35.333333333333343" width="150" height="149.99999999999997"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="81W-PE-Tue"/>
                                                     <constraint firstAttribute="width" constant="150" id="OY6-Bc-1kj"/>
@@ -260,7 +260,7 @@
                         <outlet property="loginButton" destination="jZP-5Y-HK8" id="Mkr-ib-2CD"/>
                         <outlet property="passwordLabel" destination="9AJ-Ch-kHZ" id="Twb-h1-VP0"/>
                         <outlet property="passwordTextField" destination="9AJ-Ch-kHZ" id="1UX-aa-mIh"/>
-                        <segue destination="qtl-78-FfQ" kind="show" identifier="LoginToMain" id="erO-R1-GDx"/>
+                        <segue destination="xSP-zy-gJ1" kind="show" identifier="LoginToMain" id="Llu-ry-6an"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MK7-vD-uO3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -287,7 +287,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW4-yJ-IbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3878.6259541984732" y="148.59154929577466"/>
+            <point key="canvasLocation" x="3718" y="-505"/>
+        </scene>
+        <!--All tasks-->
+        <scene sceneID="Bmh-Rn-oT2">
+            <objects>
+                <viewController id="xgp-fq-BKZ" customClass="AllTaskMainViewController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cfH-oD-ji8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="wX5-vS-2Kn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="All tasks" image="square.and.arrow.up.badge.clock" catalog="system" id="bLt-jL-WNB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="al3-rq-gQi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5778" y="348"/>
+        </scene>
+        <!--Today's Task-->
+        <scene sceneID="IaL-0S-jAS">
+            <objects>
+                <viewController id="wLZ-L1-7pn" customClass="TodayMainViewController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="98A-yl-yvy">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="0UM-91-kx4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Today's Task" image="rectangle.portrait.and.arrow.forward.fill" catalog="system" id="SWe-Kq-c8d"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRY-uV-Iq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5778" y="-259"/>
+        </scene>
+        <!--Main Tab Bar Controller-->
+        <scene sceneID="OEh-79-UO4">
+            <objects>
+                <tabBarController id="xSP-zy-gJ1" customClass="MainTabBarController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6uZ-kg-396">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="fx6-zQ-gg4"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zmK-NT-LBp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <tabBarAppearance key="standardAppearance" stackedItemPositioning="fill" stackedItemSpacing="4"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="wLZ-L1-7pn" kind="relationship" relationship="viewControllers" id="HKY-JH-m3X"/>
+                        <segue destination="xgp-fq-BKZ" kind="relationship" relationship="viewControllers" id="Ksd-9F-zQB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mbD-Br-TLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3718" y="192"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9Oc-lp-8IJ">
@@ -408,7 +462,7 @@
                         <outlet property="passwordLabel" destination="asc-3Y-XCU" id="lQX-ZC-Fq9"/>
                         <outlet property="passwordTextField" destination="asc-3Y-XCU" id="QRP-Sl-eQu"/>
                         <outlet property="registerButton" destination="bv8-F2-8ka" id="6DC-QR-yTU"/>
-                        <segue destination="qtl-78-FfQ" kind="show" identifier="RegisterToMain" id="fCl-7V-kEQ"/>
+                        <segue destination="xSP-zy-gJ1" kind="show" identifier="RegisterToMain" id="hzi-VD-foN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y9h-hy-7QP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -417,9 +471,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="erO-R1-GDx"/>
+        <segue reference="hzi-VD-foN"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="rectangle.portrait.and.arrow.forward.fill" catalog="system" width="128" height="108"/>
+        <image name="square.and.arrow.up.badge.clock" catalog="system" width="117" height="128"/>
         <image name="todo-icon-1024x1024-8p9cd4g6" width="1024" height="1024"/>
         <image name="todo-list-seamless-pattern-universal-background-vector-7561340" width="3000" height="2000"/>
         <systemColor name="systemBackgroundColor">

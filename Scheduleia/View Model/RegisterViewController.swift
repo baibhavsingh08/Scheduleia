@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController {
                     alert.addAction(action)
                     self.present(alert, animated: true)
                 }else{
-                    print("registered")
+                    
                     self.performSegue(withIdentifier: "RegisterToMain", sender: self)
                 }
             }
