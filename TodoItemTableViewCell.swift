@@ -13,7 +13,7 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var leftImage: UIImageView!
-    
+    @IBOutlet weak var colorLabel: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

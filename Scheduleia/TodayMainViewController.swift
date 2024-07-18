@@ -107,9 +107,12 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
             cell.leftImage.image = UIImage(named: "highestPriority")
 
         }
+        
         cell.deadlineLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = model[indexPath.row].deadline
+        
+        cell.colorLabel.backgroundColor = .red
 //        cell.description = model[indexPath.row].decription
         
         return cell

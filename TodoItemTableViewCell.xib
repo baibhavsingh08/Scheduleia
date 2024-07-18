@@ -98,7 +98,7 @@
                 <outlet property="headingLabel" destination="ygf-BZ-VN8" id="3zj-qo-SLZ"/>
                 <outlet property="leftImage" destination="Hae-ri-JDK" id="qnO-g1-93l"/>
             </connections>
-            <point key="canvasLocation" x="203.0534351145038" y="51.056338028169016"/>
+            <point key="canvasLocation" x="279" y="48"/>
         </tableViewCell>
     </objects>
     <resources>
