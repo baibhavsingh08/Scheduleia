@@ -8,55 +8,26 @@
 import UIKit
 
 class AllTaskMainViewController: UIViewController {
-    
-    
-
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.hidesBackButton = true
-        
-//        view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
-//        tableView.frame = view.bounds
         
-        let button = UIButton()
-        button.setTitle("Add Task", for: .normal)
-        button.backgroundColor = .systemBlue
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(button)
-                
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        
-        
-                
-        if let tabBarHeight = tabBarController?.tabBar.frame.size.height {
-                    button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(20 + tabBarHeight)).isActive = true
-                }
-        
-        button.layer.cornerRadius = button.frame.size.width/2
-        button.clipsToBounds = true
-        
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-            
-        
-//        tableView.backgroundColor = UIColor.lightGray
-        
-
+        addButton.layer.cornerRadius = addButton.frame.size.width/4
+        addButton.clipsToBounds = true
         
         tableView.register(UINib(nibName: "TodoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
     }
     
-    @objc func buttonPressed(){
-        print("hii")
+    @IBAction func buttonPressed(_ sender: Any) {
+        print("Hello")
     }
-    
 }
-
-
 
 extension AllTaskMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +38,7 @@ extension AllTaskMainViewController: UITableViewDelegate, UITableViewDataSource 
 //        let model  = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
 //        cell.textLabel?.text = "aa"
+        cell.headingLabel.text = "aaaaaa"
         return cell
     }
     

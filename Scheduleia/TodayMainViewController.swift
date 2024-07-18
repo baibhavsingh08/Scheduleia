@@ -21,6 +21,7 @@ class TodayMainViewController: UIViewController {
     
     var vc: UIViewController! = nil
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
 //    let tableView: UITableView = {
@@ -35,9 +36,7 @@ class TodayMainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for _ in 1...10{
-            model.append(TodoModel(decription: "aa", heading: "aa", deadline: "aa", priority: 1, email: "Asasaa"))
-        }
+        
 
         title = "Today's Tasks"
         navigationItem.hidesBackButton = true
@@ -46,22 +45,8 @@ class TodayMainViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 //        tableView.frame = view.bounds
-        
-        let button = UIButton()
-        button.setTitle("Add Task", for: .normal)
-        button.backgroundColor = .systemBlue
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(button)
-                
-        button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30).isActive = true
-        
-        if let tabBarHeight = tabBarController?.tabBar.frame.size.height {
-                    button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(50 + tabBarHeight)).isActive = true
-                }
-        
-        button.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-            
+        addButton.layer.cornerRadius = addButton.frame.size.width/4
+        addButton.clipsToBounds = true
         
 //        tableView.backgroundColor = UIColor.lightGray
         
@@ -101,7 +86,8 @@ class TodayMainViewController: UIViewController {
         })
     }
     
-    @objc func buttonPressed(){
+    @IBAction func buttonPressed(_ sender: Any) {
+   
          let storyBoard = UIStoryboard(name: "Main", bundle: nil)
          vc = storyBoard.instantiateViewController(identifier: "testVC")
 
