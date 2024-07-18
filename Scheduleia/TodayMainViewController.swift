@@ -68,17 +68,43 @@ class TodayMainViewController: UIViewController {
 
         
         tableView.register(UINib(nibName: "TodoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        loadTodoData()
+    }
+    
+    func loadTodoData(){
+        model = []
+        
+        db.collection("todoData").getDocuments(completion: {(QuerySnapshot,error) in
+            if((error) != nil){
+                print(error!)
+                print("no")
+            }else{
+                if let docs = QuerySnapshot?.documents {
+                    for doc in docs{
+                        let data = doc.data()
+                        
+                        
+                       if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
+                           
+                            let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email)
+                           
+                           self.model.append(item)
+                           
+                           DispatchQueue.main.async {
+                               self.tableView.reloadData()
+                           }
+                        }
+                    }
+                }
+            }
+        })
     }
     
     @objc func buttonPressed(){
          let storyBoard = UIStoryboard(name: "Main", bundle: nil)
          vc = storyBoard.instantiateViewController(identifier: "testVC")
-        vc.navigationItem.title = "AAA"
-        
-//        let label = UILabel()
-//        label.text = "Hii"
-//        label.frame = CGRect(x: 100, y: 100, width: 100, height: 50)
-//        vc.view.addSubview(label)
+
         
          textField1 = UITextField()
         textField1.placeholder = "Enter text here"
@@ -132,11 +158,12 @@ class TodayMainViewController: UIViewController {
         
         
         if let msgHeading = textField1?.text, let msgDescription = textField2?.text, let msgDeadline = textField3?.text, let msgSender = Auth.auth().currentUser?.email{
-            
-            let msg = TodoModel(decription: msgHeading, heading: msgDescription, deadline: msgDeadline, priority: 1, email: msgSender)
-            let msgData = msg.toDictionary()
 
-            db.collection("todoData").addDocument(data: ["sender": msgSender, "data": msgData], completion: nil)
+            db.collection("todoData").addDocument(data: ["decription": msgDescription,
+                                                         "heading": msgHeading,
+                                                         "deadline": msgDeadline,
+                                                         "priority": 1,
+                                                         "email": msgSender], completion: nil)
             print("in")
         
         }else{
@@ -159,23 +186,26 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "testVC")
-        vc.navigationItem.title = "AAA"
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let model  = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
-        if(indexPath.row % 3 == 0){
+    
+        switch model[indexPath.row].priority {
+        case 0 :
             cell.leftImage.image = UIImage(named: "leastPriority")
-        }else if indexPath.row % 3 == 1 {
+        case 1:
             cell.leftImage.image = UIImage(named: "mediumPriority")
-        }else {
+        case 2:
             cell.leftImage.image = UIImage(named: "highestPriority")
 
+        default:
+            cell.leftImage.image = UIImage(named: "leastPriority")
         }
-        
-        cell.deadlineLabel.text = model[indexPath.row].decription
+
+        cell.descriptionLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = model[indexPath.row].deadline
         
