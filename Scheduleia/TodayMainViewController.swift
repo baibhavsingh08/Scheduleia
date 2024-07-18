@@ -58,9 +58,9 @@ class TodayMainViewController: UIViewController {
     }
     
     func loadTodoData(){
-        model = []
         
-        db.collection("todoData").getDocuments(completion: {(QuerySnapshot,error) in
+        db.collection("todoData").order(by: "time").addSnapshotListener({(QuerySnapshot,error) in
+            self.model = []
             if((error) != nil){
                 print(error!)
                 print("no")
@@ -71,8 +71,9 @@ class TodayMainViewController: UIViewController {
                         
                         
                        if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
+                           let time = data["time"]  as? Int
                            
-                            let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email)
+                           let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
                            
                            self.model.append(item)
                            
@@ -144,12 +145,15 @@ class TodayMainViewController: UIViewController {
         
         
         if let msgHeading = textField1?.text, let msgDescription = textField2?.text, let msgDeadline = textField3?.text, let msgSender = Auth.auth().currentUser?.email{
+            
+            let msgDate = Date().timeIntervalSince1970
 
             db.collection("todoData").addDocument(data: ["decription": msgDescription,
                                                          "heading": msgHeading,
                                                          "deadline": msgDeadline,
                                                          "priority": 1,
-                                                         "email": msgSender], completion: nil)
+                                                         "email": msgSender,
+                                                  "time": msgDate] , completion: nil)
             print("in")
         
         }else{
@@ -200,7 +204,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
 
         cell.descriptionLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
-        cell.deadlineLabel.text = model[indexPath.row].deadline
+        cell.deadlineLabel.text = (model[indexPath.row].deadline)
         
 //        cell.colorLabel.backgroundColor = .red
 //        cell.description = model[indexPath.row].decription

@@ -28,6 +28,7 @@
 		B95B153F2C47A59500E6F104 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153E2C47A59500E6F104 /* MainTabBarController.swift */; };
 		B95B15412C47A73C00E6F104 /* TodayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */; };
 		B95B15432C47A76A00E6F104 /* AllTaskMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */; };
+		B96589092C49553300AAB90B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B96589082C49553300AAB90B /* IQKeyboardManagerSwift */; };
 		B99184322C48027400420DEE /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99184312C48027400420DEE /* TodoModel.swift */; };
 		B9ABDF752C464B0900D2B493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF742C464B0900D2B493 /* AppDelegate.swift */; };
 		B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */; };
@@ -74,6 +75,7 @@
 				B95B15212C468C0200E6F104 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				B95B15272C468C0200E6F104 /* FirebaseAppCheck in Frameworks */,
 				B95B152B2C468CD300E6F104 /* FirebaseAuthCombine-Community in Frameworks */,
+				B96589092C49553300AAB90B /* IQKeyboardManagerSwift in Frameworks */,
 				B95B152D2C468CD300E6F104 /* FirebaseDatabase in Frameworks */,
 				B95B15252C468C0200E6F104 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				B95B15352C468CD300E6F104 /* FirebaseFirestoreSwift in Frameworks */,
@@ -169,6 +171,7 @@
 				B95B15302C468CD300E6F104 /* FirebaseFirestore */,
 				B95B15322C468CD300E6F104 /* FirebaseFirestoreCombine-Community */,
 				B95B15342C468CD300E6F104 /* FirebaseFirestoreSwift */,
+				B96589082C49553300AAB90B /* IQKeyboardManagerSwift */,
 			);
 			productName = Scheduleia;
 			productReference = B9ABDF712C464B0900D2B493 /* Scheduleia.app */;
@@ -200,6 +203,7 @@
 			mainGroup = B9ABDF682C464B0900D2B493;
 			packageReferences = (
 				B95B151D2C468C0200E6F104 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				B96589072C49553300AAB90B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = B9ABDF722C464B0900D2B493 /* Products */;
 			projectDirPath = "";
@@ -472,6 +476,14 @@
 				minimumVersion = 10.29.0;
 			};
 		};
+		B96589072C49553300AAB90B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -534,6 +546,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B95B151D2C468C0200E6F104 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
+		};
+		B96589082C49553300AAB90B /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B96589072C49553300AAB90B /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 
