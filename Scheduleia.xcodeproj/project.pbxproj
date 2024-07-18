@@ -29,6 +29,7 @@
 		B95B15412C47A73C00E6F104 /* TodayMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */; };
 		B95B15432C47A76A00E6F104 /* AllTaskMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */; };
 		B96589092C49553300AAB90B /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B96589082C49553300AAB90B /* IQKeyboardManagerSwift */; };
+		B965890B2C49805E00AAB90B /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B965890A2C49805E00AAB90B /* AddTaskViewController.swift */; };
 		B99184322C48027400420DEE /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99184312C48027400420DEE /* TodoModel.swift */; };
 		B9ABDF752C464B0900D2B493 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF742C464B0900D2B493 /* AppDelegate.swift */; };
 		B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */; };
@@ -49,6 +50,7 @@
 		B95B153E2C47A59500E6F104 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMainViewController.swift; path = Scheduleia/TodayMainViewController.swift; sourceTree = SOURCE_ROOT; };
 		B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTaskMainViewController.swift; sourceTree = "<group>"; };
+		B965890A2C49805E00AAB90B /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddTaskViewController.swift; path = Scheduleia/AddTaskViewController.swift; sourceTree = SOURCE_ROOT; };
 		B99184312C48027400420DEE /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		B9ABDF712C464B0900D2B493 /* Scheduleia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scheduleia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9ABDF742C464B0900D2B493 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		B95B15182C46804500E6F104 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				B965890A2C49805E00AAB90B /* AddTaskViewController.swift */,
 				B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */,
 				B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */,
 				B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */,
@@ -246,6 +249,7 @@
 				B99184322C48027400420DEE /* TodoModel.swift in Sources */,
 				B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */,
 				B9ABDF772C464B0900D2B493 /* SceneDelegate.swift in Sources */,
+				B965890B2C49805E00AAB90B /* AddTaskViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

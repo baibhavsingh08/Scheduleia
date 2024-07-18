@@ -1,10 +1,3 @@
-//
-//  TodayMainViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 17/07/24.
-//
-
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -23,20 +16,9 @@ class TodayMainViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
-    
-//    let tableView: UITableView = {
-//        let table = UITableView()
-//        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-//        return table
-//    }()
-    
-    
-   
-
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
 
         title = "Today's Tasks"
         navigationItem.hidesBackButton = true
@@ -73,6 +55,7 @@ class TodayMainViewController: UIViewController {
                        if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
                            let time = data["time"]  as? Int
                            
+                           
                            let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
                            
                            self.model.append(item)
@@ -93,27 +76,21 @@ class TodayMainViewController: UIViewController {
          vc = storyBoard.instantiateViewController(identifier: "testVC")
 
         
-         textField1 = UITextField()
-        textField1.placeholder = "Enter text here"
-        textField1.textColor = .black
-        textField1.backgroundColor = .white
+         textField1 = createTextField()
+        
         textField1.frame = CGRect(x: 100, y: 100, width: 300, height: 60)
 
         vc.view.addSubview(textField1)
 
-         textField2 = UITextField()
-        textField2.placeholder = "Enter text here"
-        textField2.textColor = .black
-        textField2.backgroundColor = .white
+         textField2 = createTextField()
+        
         textField2.frame = CGRect(x: 100, y: 200, width: 300, height: 60)
 
         vc.view.addSubview(textField2)
         
-         textField3 = UITextField()
-        textField3.placeholder = "Enter text here"
-        textField3.textColor = .black
-        textField3.backgroundColor = .white
-        textField3.frame = CGRect(x: 100, y: 400, width: 300, height: 60)
+        textField3 = createTextField()
+        
+        textField3.frame = CGRect(x: 100, y: 300, width: 300, height: 60)
 
         vc.view.addSubview(textField3)
         
@@ -128,7 +105,7 @@ class TodayMainViewController: UIViewController {
         button.addTarget(self, action: #selector(saveDataToFirebase), for: .touchUpInside)
 
         
-        navigationController?.pushViewController(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
 //        tableView.reloadData()
     }
     
@@ -144,7 +121,7 @@ class TodayMainViewController: UIViewController {
         print("hello")
         
         
-        if let msgHeading = textField1?.text, let msgDescription = textField2?.text, let msgDeadline = textField3?.text, let msgSender = Auth.auth().currentUser?.email{
+        if let msgHeading = textField1?.text, !msgHeading.isEmpty, let msgDescription = textField2?.text, !msgDescription.isEmpty, let msgDeadline = textField3?.text, !msgDeadline.isEmpty, let msgSender = Auth.auth().currentUser?.email{
             
             let msgDate = Date().timeIntervalSince1970
 
@@ -159,10 +136,7 @@ class TodayMainViewController: UIViewController {
         }else{
             print("err")
         }
-        
         navigationController?.popViewController(animated: true)
-
-        
     }
 }
 
@@ -177,6 +151,14 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "testVC")
         navigationController?.pushViewController(vc, animated: true)
+        
+//        model.remove(at: indexPath.row)
+//        
+//        DispatchQueue.main.async {
+//            tableView.reloadData()
+//        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -184,9 +166,11 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
     
         switch model[indexPath.row].priority {
+            
         case 0 :
             cell.leftImage.image = UIImage(named: "leastPriority")
             cell.colorLabel.backgroundColor = .blue
+            
         case 1:
             cell.leftImage.image = UIImage(named: "mediumPriority")
             cell.colorLabel.backgroundColor = .yellow
@@ -194,7 +178,6 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         case 2:
             cell.leftImage.image = UIImage(named: "highestPriority")
             cell.colorLabel.backgroundColor = .red
-
 
         default:
             cell.leftImage.image = UIImage(named: "leastPriority")
