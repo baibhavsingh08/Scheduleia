@@ -401,15 +401,14 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-sC-Lb6">
-                                <rect key="frame" x="0.0" y="158" width="393" height="603"/>
+                                <rect key="frame" x="0.0" y="158" width="393" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yju-jM-R0K">
-                                <rect key="frame" x="213" y="674" width="160" height="75"/>
+                                <rect key="frame" x="253" y="689" width="120" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="FiF-sW-aD2"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="141" id="W0K-6e-AvV"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="qEw-Y0-bo3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="REN-vf-wte"/>
+                                    <constraint firstAttribute="height" constant="60" id="goR-R5-Ipi"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="+  New">

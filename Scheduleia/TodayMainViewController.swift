@@ -166,7 +166,7 @@ class TodayMainViewController: UIViewController {
 
 extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.count
+        return model.count 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -182,13 +182,20 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         switch model[indexPath.row].priority {
         case 0 :
             cell.leftImage.image = UIImage(named: "leastPriority")
+            cell.colorLabel.backgroundColor = .blue
         case 1:
             cell.leftImage.image = UIImage(named: "mediumPriority")
+            cell.colorLabel.backgroundColor = .yellow
+
         case 2:
             cell.leftImage.image = UIImage(named: "highestPriority")
+            cell.colorLabel.backgroundColor = .red
+
 
         default:
             cell.leftImage.image = UIImage(named: "leastPriority")
+            cell.colorLabel.backgroundColor = .blue
+
         }
 
         cell.descriptionLabel.text = model[indexPath.row].decription

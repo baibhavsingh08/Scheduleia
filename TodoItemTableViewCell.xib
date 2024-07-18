@@ -11,11 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="133" id="KGk-i7-Jjw" customClass="TodoItemTableViewCell" customModule="Scheduleia" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="404" height="133"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="177" id="KGk-i7-Jjw" customClass="TodoItemTableViewCell" customModule="Scheduleia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="404" height="177"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="404" height="133"/>
+                <rect key="frame" x="0.0" y="0.0" width="404" height="177"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-0P-71H">
@@ -96,12 +96,13 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="colorLabel" destination="eOi-mg-9Nv" id="2DE-qv-oq9"/>
                 <outlet property="deadlineLabel" destination="chO-SG-XcJ" id="s8B-a6-xk3"/>
                 <outlet property="descriptionLabel" destination="HyH-Nu-wNh" id="INO-bB-0f7"/>
                 <outlet property="headingLabel" destination="ygf-BZ-VN8" id="3zj-qo-SLZ"/>
                 <outlet property="leftImage" destination="Hae-ri-JDK" id="qnO-g1-93l"/>
             </connections>
-            <point key="canvasLocation" x="279" y="48"/>
+            <point key="canvasLocation" x="277.86259541984731" y="63.028169014084511"/>
         </tableViewCell>
     </objects>
     <resources>
