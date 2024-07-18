@@ -99,6 +99,14 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        let model  = models[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
+        if(indexPath.row % 3 == 0){
+            cell.leftImage.image = UIImage(named: "leastPriority")
+        }else if indexPath.row % 3 == 1 {
+            cell.leftImage.image = UIImage(named: "mediumPriority")
+        }else {
+            cell.leftImage.image = UIImage(named: "highestPriority")
+
+        }
         cell.deadlineLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = model[indexPath.row].deadline

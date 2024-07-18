@@ -34,7 +34,7 @@ class AllTaskMainViewController: UIViewController {
         
                 
         if let tabBarHeight = tabBarController?.tabBar.frame.size.height {
-                    button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(50 + tabBarHeight)).isActive = true
+                    button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -(20 + tabBarHeight)).isActive = true
                 }
         
         button.layer.cornerRadius = button.frame.size.width/2
