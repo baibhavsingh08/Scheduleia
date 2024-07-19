@@ -13,19 +13,53 @@ class AddTaskViewController: UIViewController {
     
     let db = Firestore.firestore()
 
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateSelector: UIDatePicker!
-    @IBOutlet weak var prioritySlider: UISlider!
     @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var headingLabel: UITextField!
     
-    
+    @IBOutlet weak var priorityButton: UIButton!
+    var taskPriority = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(db)
+        
+        imageView.layer.cornerRadius = imageView.frame.size.width/2
+        imageView.clipsToBounds = true
+        
+        
+        
+        let highPriority = UIAction(title: "High") { _ in
+            self.taskPriority = 2
+            self.priorityButton.backgroundColor = .red
+            self.imageView.backgroundColor = .red
+        }
+        
+        let mediumPriority = UIAction(title: "Medium") { _ in
+            self.taskPriority = 1
+            self.priorityButton.backgroundColor = .yellow
+            
+            self.imageView.backgroundColor = .yellow
+
+        }
+        
+        let lowPriority = UIAction(title: "Low") { _ in
+            self.taskPriority = 0
+            self.priorityButton.backgroundColor = .blue
+            self.imageView.backgroundColor = .blue
+
+        }
+        
+        let menu = UIMenu(title: "", children: [lowPriority,mediumPriority,highPriority])
+        
+        priorityButton.menu = menu
+        priorityButton.showsMenuAsPrimaryAction = true
 
     }
     
     @IBAction func saveTask(_ sender: Any) {
-        if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, !msgDescription.isEmpty, let msgDeadline = dateSelector?.date, let priority = prioritySlider?.value, let msgSender = Auth.auth().currentUser?.email{
+        if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
             
             let msgDate = Date().timeIntervalSince1970
             
@@ -35,13 +69,13 @@ class AddTaskViewController: UIViewController {
             dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
             let dateString = dateFormatter.string(from: date)
             
-            let priorityValue = Int(priority.rounded())
 
             db.collection("todoData").addDocument(data: ["decription": msgDescription,
                                                          "heading": msgHeading,
                                                          "deadline": dateString,
-                                                         "priority": priorityValue,
+                                                         "priority": taskPriority,
                                                          "email": msgSender,
+                                                         "isDone": false,
                                                   "time": msgDate] , completion: nil)
             print("in")
         

@@ -14,6 +14,7 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var colorLabel: UIView!
     
+    @IBOutlet weak var deleteButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,6 +22,10 @@ class TodoItemTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
+    }
+    
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        print("delete")
     }
     
     @IBAction func alterButton(_ sender: UIButton) {

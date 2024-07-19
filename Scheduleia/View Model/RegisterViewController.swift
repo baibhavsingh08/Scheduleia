@@ -1,10 +1,3 @@
-//
-//  RegisterViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 16/07/24.
-//
-
 import UIKit
 import Firebase
 

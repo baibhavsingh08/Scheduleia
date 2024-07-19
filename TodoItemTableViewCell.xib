@@ -11,15 +11,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="177" id="KGk-i7-Jjw" customClass="TodoItemTableViewCell" customModule="Scheduleia" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="404" height="177"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="268" id="KGk-i7-Jjw" customClass="TodoItemTableViewCell" customModule="Scheduleia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="827" height="268"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="404" height="177"/>
+                <rect key="frame" x="0.0" y="0.0" width="827" height="268"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-0P-71H">
-                        <rect key="frame" x="10" y="10" width="389" height="157"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DX5-0P-71H">
+                        <rect key="frame" x="10" y="10" width="812" height="157"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-mg-9Nv">
                                 <rect key="frame" x="5" y="8" width="4" height="141"/>
@@ -41,10 +41,10 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qx3-RY-dvi">
-                                <rect key="frame" x="63" y="8" width="326" height="141"/>
+                                <rect key="frame" x="63" y="8" width="695" height="141"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygf-BZ-VN8">
-                                        <rect key="frame" x="0.0" y="0.0" width="326" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="695" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="AgR-XR-57v"/>
                                         </constraints>
@@ -53,13 +53,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyH-Nu-wNh">
-                                        <rect key="frame" x="0.0" y="25" width="326" height="91"/>
+                                        <rect key="frame" x="0.0" y="25" width="695" height="91"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="deadline" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chO-SG-XcJ">
-                                        <rect key="frame" x="0.0" y="121" width="326" height="20"/>
+                                        <rect key="frame" x="0.0" y="121" width="695" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="7Xe-Ia-mru"/>
                                         </constraints>
@@ -78,9 +78,22 @@
                                     <constraint firstItem="ygf-BZ-VN8" firstAttribute="leading" secondItem="Qx3-RY-dvi" secondAttribute="leading" id="ztt-Qk-TfG"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dgs-rC-PK8">
+                                <rect key="frame" x="768" y="8" width="34" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="lwd-tU-Xgi"/>
+                                    <constraint firstAttribute="width" constant="34" id="oVW-Gh-bBr"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="minus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="deleteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yJG-mt-mKo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="FFF-G7-Ubg" firstAttribute="top" secondItem="DX5-0P-71H" secondAttribute="top" constant="8" id="5Hc-fb-tSN"/>
+                            <constraint firstAttribute="trailing" secondItem="Dgs-rC-PK8" secondAttribute="trailing" constant="10" id="88M-ib-ZXf"/>
                             <constraint firstItem="FFF-G7-Ubg" firstAttribute="leading" secondItem="eOi-mg-9Nv" secondAttribute="trailing" constant="10" id="9NC-Zd-Ya1"/>
                             <constraint firstItem="eOi-mg-9Nv" firstAttribute="leading" secondItem="DX5-0P-71H" secondAttribute="leading" constant="5" id="KwX-Ks-g4W"/>
                             <constraint firstItem="FFF-G7-Ubg" firstAttribute="top" secondItem="DX5-0P-71H" secondAttribute="top" constant="8" id="M36-Fw-ThM"/>
@@ -88,8 +101,10 @@
                             <constraint firstAttribute="bottom" secondItem="FFF-G7-Ubg" secondAttribute="bottom" constant="36" id="dFf-BB-vHT"/>
                             <constraint firstItem="eOi-mg-9Nv" firstAttribute="top" secondItem="DX5-0P-71H" secondAttribute="top" constant="8" id="dKF-Mt-Soe"/>
                             <constraint firstItem="Qx3-RY-dvi" firstAttribute="leading" secondItem="FFF-G7-Ubg" secondAttribute="trailing" constant="10" id="g0e-Oi-Wak"/>
+                            <constraint firstItem="Dgs-rC-PK8" firstAttribute="top" secondItem="DX5-0P-71H" secondAttribute="top" constant="8" id="lLW-2x-Eqz"/>
                             <constraint firstAttribute="bottom" secondItem="eOi-mg-9Nv" secondAttribute="bottom" constant="8" id="ouW-1n-Nbt"/>
                             <constraint firstItem="Qx3-RY-dvi" firstAttribute="leading" secondItem="FFF-G7-Ubg" secondAttribute="trailing" constant="10" id="rur-WP-duy"/>
+                            <constraint firstItem="Dgs-rC-PK8" firstAttribute="leading" secondItem="Qx3-RY-dvi" secondAttribute="trailing" constant="10" id="wuj-VO-yFA"/>
                         </constraints>
                     </stackView>
                 </subviews>
@@ -105,13 +120,15 @@
                 <outlet property="button" destination="FFF-G7-Ubg" id="kv0-Wu-a8o"/>
                 <outlet property="colorLabel" destination="eOi-mg-9Nv" id="2DE-qv-oq9"/>
                 <outlet property="deadlineLabel" destination="chO-SG-XcJ" id="s8B-a6-xk3"/>
+                <outlet property="deleteButton" destination="Dgs-rC-PK8" id="BjF-Oo-3bt"/>
                 <outlet property="descriptionLabel" destination="HyH-Nu-wNh" id="INO-bB-0f7"/>
                 <outlet property="headingLabel" destination="ygf-BZ-VN8" id="3zj-qo-SLZ"/>
             </connections>
-            <point key="canvasLocation" x="277.86259541984731" y="63.028169014084511"/>
+            <point key="canvasLocation" x="600.76335877862596" y="95.070422535211279"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="minus.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

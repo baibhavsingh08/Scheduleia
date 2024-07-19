@@ -154,6 +154,8 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "testVC")
         
+        
+        
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -184,13 +186,9 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
 //        cell.colorLabel.backgroundColor = .red
 //        cell.description = model[indexPath.row].decription
         
- 
         
         cell.button.setImage(UIImage(named: "unchecked"), for: .normal)
         cell.button.setImage(UIImage(named: "checked"), for: .selected)
-
-        
-        
 
         return cell
     }

@@ -9,10 +9,10 @@ import Foundation
 
 struct TodoModel{
 
-    var decription: String = "hii"
-    var heading: String = "hello"
-    var deadline: String = "12:00"
-    var priority: Int = 0
+    var decription: String
+    var heading: String
+    var deadline: String
+    var priority: Int
     var email: String
     var time: Int
     
