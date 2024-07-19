@@ -8,6 +8,7 @@ class TodayMainViewController: UIViewController {
     let db = Firestore.firestore()
     var model = [TodoModel]()
     
+    
     var textField1: UITextField!
        var textField2: UITextField!
        var textField3: UITextField!
@@ -56,9 +57,12 @@ class TodayMainViewController: UIViewController {
                            let time = data["time"]  as? Int
                            
                            
-                           let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
-                           
-                           self.model.append(item)
+                           if(Auth.auth().currentUser?.email == email ){
+                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
+                               
+                               self.model.append(item)
+                               
+                           }
                            
                            DispatchQueue.main.async {
                                self.tableView.reloadData()
@@ -150,15 +154,8 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyBoard.instantiateViewController(identifier: "testVC")
+        
         navigationController?.pushViewController(vc, animated: true)
-        
-//        model.remove(at: indexPath.row)
-//        
-//        DispatchQueue.main.async {
-//            tableView.reloadData()
-//        }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -168,19 +165,15 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         switch model[indexPath.row].priority {
             
         case 0 :
-            cell.leftImage.image = UIImage(named: "leastPriority")
             cell.colorLabel.backgroundColor = .blue
             
         case 1:
-            cell.leftImage.image = UIImage(named: "mediumPriority")
             cell.colorLabel.backgroundColor = .yellow
 
         case 2:
-            cell.leftImage.image = UIImage(named: "highestPriority")
             cell.colorLabel.backgroundColor = .red
 
         default:
-            cell.leftImage.image = UIImage(named: "leastPriority")
             cell.colorLabel.backgroundColor = .blue
 
         }
@@ -192,8 +185,27 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
 //        cell.colorLabel.backgroundColor = .red
 //        cell.description = model[indexPath.row].decription
         
+ 
+        
+        cell.button.setImage(UIImage(named: "unchecked"), for: .normal)
+        cell.button.setImage(UIImage(named: "checked"), for: .selected)
+
+        
+        
+
         return cell
     }
+//    
+//    @objc func alterCheckBox(){
+//        button.isSelected.toggle()
+//        
+//        print(2)
+//        
+//        DispatchQueue.main.async {
+//            self.tableView.reloadData()
+//        }
+//    
+//    }
     
 //
 }
