@@ -52,7 +52,6 @@ class TodayMainViewController: UIViewController {
                     for doc in docs{
                         let data = doc.data()
                         
-                        
                        if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
                            let time = data["time"]  as? Int
                            
