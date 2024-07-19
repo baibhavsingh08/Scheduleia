@@ -146,17 +146,24 @@ class TodayMainViewController: UIViewController {
 
 
 extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(identifier: "testVC")
+        let vc = storyBoard.instantiateViewController(identifier: "testVC") as? ShowTaskViewController
         
+        let task = model[indexPath.row]
         
+        vc?.taskHeading = task.heading
+        vc?.taskDescription = task.decription
+        vc?.taskDeadline = task.deadline
+        vc?.taskPriority = task.priority
         
-        navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

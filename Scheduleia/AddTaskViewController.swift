@@ -17,11 +17,64 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var dateSelector: UIDatePicker!
     @IBOutlet weak var descriptionLabel: UITextField!
     @IBOutlet weak var headingLabel: UITextField!
-    
     @IBOutlet weak var priorityButton: UIButton!
+    
+    
+    var descriptionText: String?
+    var headingText: String?
+    var priorityText: String?
+    var deadlineText: String?
+    
+    
     var taskPriority = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let descriptionText  {
+            descriptionLabel.text = descriptionText
+        }
+        if let headingText  {
+            headingLabel.text = headingText
+        }
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
+            dateSelector.date = dateInDate
+        }
+        
+        print(priorityText)
+
+        if let priorityText {
+            switch priorityText {
+            case "Low":
+                taskPriority = 0
+                imageView.backgroundColor = .blue
+                priorityButton.backgroundColor = .blue
+                print(0)
+            case "Medium":
+                taskPriority = 1
+                imageView.backgroundColor = .yellow
+                priorityButton.backgroundColor = .yellow
+                print(0)
+
+
+            case "Hard":
+                taskPriority = 2
+                imageView.backgroundColor = .red
+                priorityButton.backgroundColor = .red
+                print(0)
+
+
+            default:
+                taskPriority = 0
+                imageView.backgroundColor = .blue
+                priorityButton.backgroundColor = .blue
+                print(0)
+            }
+        }
+
         
         print(db)
         
