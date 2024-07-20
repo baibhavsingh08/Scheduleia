@@ -41,7 +41,7 @@ class AddTaskViewController: UIViewController {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.setDate(dateInDate, animated: true)
@@ -146,7 +146,7 @@ class AddTaskViewController: UIViewController {
                 let date = msgDeadline
                 let dateFormatter = DateFormatter()
                 
-                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+                dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
                 let dateString = dateFormatter.string(from: date)
                 
                 let newDoc = db.collection("todoData").document()
@@ -181,7 +181,7 @@ class AddTaskViewController: UIViewController {
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
+        dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
         let dateString = dateFormatter.string(from: date)
         
         documentRef.updateData(["id": id, 
