@@ -21,6 +21,7 @@ class ShowTaskViewController: UIViewController {
     var taskPriority: Int?
     var docId: String?
     var isDone: Bool?
+//    var date: Timestamp?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +60,6 @@ class ShowTaskViewController: UIViewController {
         vc?.cameFromShow = 1
         vc?.docId = docId
         vc?.isDone = isDone
-        
         
         self.navigationController?.pushViewController(vc!, animated: true)
     }

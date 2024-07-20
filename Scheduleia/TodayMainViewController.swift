@@ -37,11 +37,17 @@ class TodayMainViewController: UIViewController {
         loadTodoData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        loadTodoData()
+    }
+    
     
     
     func loadTodoData(){
         
-        db.collection("todoData").order(by: "date").addSnapshotListener({(QuerySnapshot,error) in
+        db.collection("todoData").order(by: "deadline").addSnapshotListener({(QuerySnapshot,error) in
             self.model = []
             if((error) != nil){
                 print(error!)
@@ -56,7 +62,7 @@ class TodayMainViewController: UIViewController {
                             
                             
                             if(Auth.auth().currentUser?.email == email ){
-                                let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: (data["id"] as? String)! , isDone: (data["isDone"] as? Bool)!  )
+                                let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: (data["id"] as? String)! , isDone: (data["isDone"] as? Bool)!)
                                 
                                 self.model.append(item)
                                 print(data["id"] as? String ?? "")
@@ -71,8 +77,12 @@ class TodayMainViewController: UIViewController {
                 }
             }
         })
+        var x = model.sorted{$0.deadline < $1.deadline}
+        
+        model = x
     }
     
+  
 }
 
 

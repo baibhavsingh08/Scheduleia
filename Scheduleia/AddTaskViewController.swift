@@ -27,6 +27,7 @@ class AddTaskViewController: UIViewController {
     var cameFromShow: Int?
     var docId: String?
     var isDone: Bool?
+//    var date: Timestamp?
     
     var taskPriority = 0
     override func viewDidLoad() {
@@ -43,7 +44,7 @@ class AddTaskViewController: UIViewController {
         dateFormatter.dateFormat = "dd/MMMM/yy hh-mm a"
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
-            dateSelector.date = dateInDate
+            dateSelector.setDate(dateInDate, animated: true)
         }
         
 //        print(priorityText!)
@@ -117,23 +118,23 @@ class AddTaskViewController: UIViewController {
         if let id = docId {
             updateData(id)
             if let navigationController = self.navigationController {
-                        let viewControllers = navigationController.viewControllers
-                        let numberOfViewControllers = viewControllers.count
-                        
-                        if numberOfViewControllers >= 3 {
-                            let targetViewController = viewControllers[numberOfViewControllers - 3]
-                            let viewControllerName = String(describing: type(of: targetViewController))
-                            print(viewControllerName)
-                            if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
-                                navigationController.popViewController(animated: true)
-
-                            } else {
-                                navigationController.popToViewController(targetViewController, animated: true)
-                            }
-                        } else {
-                            // If less than three view controllers, just pop the current one
+                    let viewControllers = navigationController.viewControllers
+                    let numberOfViewControllers = viewControllers.count
+                    
+                    if numberOfViewControllers >= 3 {
+                        let targetViewController = viewControllers[numberOfViewControllers - 3]
+                        let viewControllerName = String(describing: type(of: targetViewController))
+                        print(viewControllerName)
+                        if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
                             navigationController.popViewController(animated: true)
+
+                        } else {
+                            navigationController.popToViewController(targetViewController, animated: true)
                         }
+                    } else {
+                        // If less than three view controllers, just pop the current one
+                        navigationController.popViewController(animated: true)
+                    }
                     }
             
         } else {
@@ -157,7 +158,7 @@ class AddTaskViewController: UIViewController {
                                 "isDone": false,
                                 "time": msgDate,
                                 "date": msgDeadline] , completion: nil)
-                print("in")
+                print(msgDeadline)
                 
             }else{
                 print("err")
@@ -179,7 +180,7 @@ class AddTaskViewController: UIViewController {
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         let dateString = dateFormatter.string(from: date)
         
         documentRef.updateData(["id": id, 
