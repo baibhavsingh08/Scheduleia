@@ -41,10 +41,11 @@ class AddTaskViewController: UIViewController {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd/MMMM/yy hh-mm a"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.setDate(dateInDate, animated: true)
+            print(dateInDate)
         }
         
 //        print(priorityText!)
