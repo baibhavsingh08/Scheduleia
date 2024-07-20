@@ -25,7 +25,7 @@ class TodoItemTableViewCell: UITableViewCell {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        print("delete")
+        
     }
     
     @IBAction func alterButton(_ sender: UIButton) {

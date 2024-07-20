@@ -19,6 +19,7 @@ class ShowTaskViewController: UIViewController {
     var taskDescription: String?
     var taskDeadline: String?
     var taskPriority: Int?
+    var docId: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +58,8 @@ class ShowTaskViewController: UIViewController {
         vc?.deadlineText = dateLabel.text
         vc?.headingText = titleLabel.text
         vc?.priorityText = priorityLabel.text
-        
+        vc?.cameFromShow = 1
+        vc?.docId = docId
         
         
         self.navigationController?.pushViewController(vc!, animated: true)

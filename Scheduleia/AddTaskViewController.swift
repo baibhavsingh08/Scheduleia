@@ -24,6 +24,8 @@ class AddTaskViewController: UIViewController {
     var headingText: String?
     var priorityText: String?
     var deadlineText: String?
+    var cameFromShow: Int?
+    var docId: String?
     
     
     var taskPriority = 0
@@ -44,7 +46,7 @@ class AddTaskViewController: UIViewController {
             dateSelector.date = dateInDate
         }
         
-        print(priorityText)
+//        print(priorityText!)
 
         if let priorityText {
             switch priorityText {
@@ -112,29 +114,86 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func saveTask(_ sender: Any) {
-        if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
+        if let id = docId {
+            updateData(id)
+            if let navigationController = self.navigationController {
+                        let viewControllers = navigationController.viewControllers
+                        let numberOfViewControllers = viewControllers.count
+                        
+                        if numberOfViewControllers >= 3 {
+                            let targetViewController = viewControllers[numberOfViewControllers - 3]
+                            navigationController.popToViewController(targetViewController, animated: true)
+                        } else {
+                            // If less than three view controllers, just pop the current one
+                            navigationController.popViewController(animated: true)
+                        }
+                    }
             
-            let msgDate = Date().timeIntervalSince1970
+        } else {
+            if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
+                
+                let msgDate = Date().timeIntervalSince1970
+                
+                let date = msgDeadline
+                let dateFormatter = DateFormatter()
+                
+                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                let dateString = dateFormatter.string(from: date)
+                
+                let newDoc = db.collection("todoData").document()
+                newDoc.setData(["id": newDoc.documentID,
+                                "decription": msgDescription,
+                                "heading": msgHeading,
+                                "deadline": dateString,
+                                "priority": taskPriority,
+                                "email": msgSender,
+                                "isDone": false,
+                                "time": msgDate] , completion: nil)
+                print("in")
+                
+            }else{
+                print("err")
+            }
             
-            let date = msgDeadline
-            let dateFormatter = DateFormatter()
-                    
-            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let dateString = dateFormatter.string(from: date)
             
-
-            db.collection("todoData").addDocument(data: ["decription": msgDescription,
-                                                         "heading": msgHeading,
-                                                         "deadline": dateString,
-                                                         "priority": taskPriority,
-                                                         "email": msgSender,
-                                                         "isDone": false,
-                                                  "time": msgDate] , completion: nil)
-            print("in")
-        
-        }else{
-            print("err")
+            navigationController?.popViewController(animated: true)
         }
-        navigationController?.popViewController(animated: true)
     }
+    
+    func updateData(_ id: String) {
+        guard  let _ = headingLabel.text else {
+                print("Missing fields for update")
+                return
+            }
+            
+        let documentRef = db.collection("todoData").document(id)
+
+        let date = dateSelector.date
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let dateString = dateFormatter.string(from: date)
+        
+        documentRef.updateData(["id": id, 
+                                "decription": self.descriptionLabel.text!,
+                                "heading": self.headingLabel.text!,
+                                "deadline": dateString,
+                                "priority": self.taskPriority,
+                                "email": Auth.auth().currentUser?.email ?? "",
+                                "isDone": false,
+                                "time": Date().timeIntervalSince1970]) { error in
+            if let error = error {
+                print("Error updating document: \(error.localizedDescription)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+        
+                    
+    }
+    
+    
+    
 }
+
+

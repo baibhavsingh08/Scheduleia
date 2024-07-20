@@ -10,8 +10,8 @@ class TodayMainViewController: UIViewController {
     
     
     var textField1: UITextField!
-       var textField2: UITextField!
-       var textField3: UITextField!
+    var textField2: UITextField!
+    var textField3: UITextField!
     
     var vc: UIViewController! = nil
     
@@ -40,6 +40,8 @@ class TodayMainViewController: UIViewController {
         loadTodoData()
     }
     
+   
+    
     func loadTodoData(){
         
         db.collection("todoData").order(by: "time").addSnapshotListener({(QuerySnapshot,error) in
@@ -57,9 +59,10 @@ class TodayMainViewController: UIViewController {
                            
                            
                            if(Auth.auth().currentUser?.email == email ){
-                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
+                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"] as? String ?? ""  )
                                
                                self.model.append(item)
+                               print(data["id"] as? String ?? "")
                                
                            }
                            
@@ -162,6 +165,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         vc?.taskDescription = task.decription
         vc?.taskDeadline = task.deadline
         vc?.taskPriority = task.priority
+        vc?.docId = task.id
         
         navigationController?.pushViewController(vc!, animated: true)
     }
@@ -199,17 +203,5 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
 
         return cell
     }
-//    
-//    @objc func alterCheckBox(){
-//        button.isSelected.toggle()
-//        
-//        print(2)
-//        
-//        DispatchQueue.main.async {
-//            self.tableView.reloadData()
-//        }
-//    
-//    }
-    
-//
+
 }

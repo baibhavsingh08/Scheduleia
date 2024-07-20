@@ -59,7 +59,7 @@ class AllTaskMainViewController: UIViewController {
                            let time = data["time"]  as? Int
                            
                            
-                           let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0  )
+                           let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"]  as! String)
                            
                            self.model.append(item)
                            
