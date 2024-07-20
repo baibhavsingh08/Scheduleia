@@ -252,6 +252,15 @@
                                                     <action selector="loginButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="x20-4d-Yh9"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-7E-Ovb">
+                                                <rect key="frame" x="120" y="0.0" width="152" height="35"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Forget Password"/>
+                                                <connections>
+                                                    <action selector="forgetButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="WF3-bH-44h"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="jZP-5Y-HK8" secondAttribute="trailing" constant="20" id="J0Y-yi-Agk"/>

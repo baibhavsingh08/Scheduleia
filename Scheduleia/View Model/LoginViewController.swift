@@ -32,6 +32,37 @@ class LoginViewController: UIViewController {
         
         
     }
+    @IBAction func forgetButtonPressed(_ sender: Any) {
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text ?? "") { error in
+                    if let e = error {
+                        let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "Okay", style: .cancel, handler: { _ in
+                            self.emailTextField.text = ""
+                            self.passwordTextField.text = ""
+                            })
+
+                            
+                        
+                        
+                        alert.addAction(action)
+                        self.present(alert, animated: true)
+                    } else {
+                        let alert = UIAlertController(title: "Reset password mail sent", message: "", preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "Okay", style: .cancel, handler: { _ in
+                            self.emailTextField.text = ""
+                            self.passwordTextField.text = ""
+                            })
+
+                            
+                        
+                        
+                        alert.addAction(action)
+                        self.present(alert, animated: true)
+                    }
+                }
+    }
     
     @IBAction func loginButtonPressed(_ sender: UIButton){
         
@@ -48,9 +79,6 @@ class LoginViewController: UIViewController {
                         self?.passwordTextField.text = ""
                         })
 
-                        
-                    
-                    
                     alert.addAction(action)
                     self?.present(alert, animated: true)
                 }else{
