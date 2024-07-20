@@ -20,6 +20,7 @@ class ShowTaskViewController: UIViewController {
     var taskDeadline: String?
     var taskPriority: Int?
     var docId: String?
+    var isDone: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ShowTaskViewController: UIViewController {
         titleLabel.text = taskHeading
         descriptionLabel.text = taskDescription
         dateLabel.text = taskDeadline
+        
         if let priority = taskPriority {
             switch priority {
             case 2:
@@ -56,6 +58,7 @@ class ShowTaskViewController: UIViewController {
         vc?.priorityText = priorityLabel.text
         vc?.cameFromShow = 1
         vc?.docId = docId
+        vc?.isDone = isDone
         
         
         self.navigationController?.pushViewController(vc!, animated: true)

@@ -26,7 +26,7 @@ class AddTaskViewController: UIViewController {
     var deadlineText: String?
     var cameFromShow: Int?
     var docId: String?
-    
+    var isDone: Bool?
     
     var taskPriority = 0
     override func viewDidLoad() {
@@ -123,8 +123,8 @@ class AddTaskViewController: UIViewController {
                         if numberOfViewControllers >= 3 {
                             let targetViewController = viewControllers[numberOfViewControllers - 3]
                             let viewControllerName = String(describing: type(of: targetViewController))
-                            
-                            if viewControllerName != "TodayMainViewController"{
+                            print(viewControllerName)
+                            if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
                                 navigationController.popViewController(animated: true)
 
                             } else {
@@ -188,7 +188,7 @@ class AddTaskViewController: UIViewController {
                                 "deadline": dateString,
                                 "priority": self.taskPriority,
                                 "email": Auth.auth().currentUser?.email ?? "",
-                                "isDone": false,
+                                "isDone": isDone!,
                                 "time": Date().timeIntervalSince1970]) { error in
             if let error = error {
                 print("Error updating document: \(error.localizedDescription)")

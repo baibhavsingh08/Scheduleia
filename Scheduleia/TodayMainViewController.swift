@@ -95,6 +95,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         vc?.taskDeadline = task.deadline
         vc?.taskPriority = task.priority
         vc?.docId = task.id
+        vc?.isDone = task.isDone
 
         
         navigationController?.pushViewController(vc!, animated: true)
@@ -138,6 +139,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.docId = model[indexPath.row].id
         cell.isDone = model[indexPath.row].isDone
         cell.priority = model[indexPath.row].priority
+        
         cell.delegate = self
 
         return cell
@@ -215,6 +217,7 @@ extension TodayMainViewController: DeleteTodoItemFromTable {
         vc?.priorityText = stringPriority
         vc?.cameFromShow = 1
         vc?.docId = cell.docId
+        vc?.isDone = cell.isDone
         
         
         self.navigationController?.pushViewController(vc!, animated: true)
