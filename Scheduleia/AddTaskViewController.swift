@@ -40,7 +40,7 @@ class AddTaskViewController: UIViewController {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.date = dateInDate
@@ -137,7 +137,7 @@ class AddTaskViewController: UIViewController {
                 let date = msgDeadline
                 let dateFormatter = DateFormatter()
                 
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                dateFormatter.dateFormat = "dd-MM-yyyy HH:mm:ss"
                 let dateString = dateFormatter.string(from: date)
                 
                 let newDoc = db.collection("todoData").document()
@@ -148,7 +148,8 @@ class AddTaskViewController: UIViewController {
                                 "priority": taskPriority,
                                 "email": msgSender,
                                 "isDone": false,
-                                "time": msgDate] , completion: nil)
+                                "time": msgDate,
+                                "date": msgDeadline] , completion: nil)
                 print("in")
                 
             }else{

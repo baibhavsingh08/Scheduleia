@@ -4,9 +4,9 @@ import FirebaseFirestore
 
 
 class TodayMainViewController: UIViewController {
-    
-    let db = Firestore.firestore()
     var model = [TodoModel]()
+
+    let db = Firestore.firestore()
     
     
     var textField1: UITextField!
@@ -44,7 +44,7 @@ class TodayMainViewController: UIViewController {
     
     func loadTodoData(){
         
-        db.collection("todoData").order(by: "time").addSnapshotListener({(QuerySnapshot,error) in
+        db.collection("todoData").order(by: "date").addSnapshotListener({(QuerySnapshot,error) in
             self.model = []
             if((error) != nil){
                 print(error!)
@@ -59,7 +59,7 @@ class TodayMainViewController: UIViewController {
                            
                            
                            if(Auth.auth().currentUser?.email == email ){
-                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"] as? String ?? ""  )
+                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: (data["id"] as? String)!   )
                                
                                self.model.append(item)
                                print(data["id"] as? String ?? "")
@@ -193,15 +193,36 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.descriptionLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = (model[indexPath.row].deadline)
-        
-//        cell.colorLabel.backgroundColor = .red
-//        cell.description = model[indexPath.row].decription
-        
-        
+      
         cell.button.setImage(UIImage(named: "unchecked"), for: .normal)
         cell.button.setImage(UIImage(named: "checked"), for: .selected)
+        
+        cell.docId = model[indexPath.row].id
+        cell.delegate = self
 
         return cell
     }
 
+}
+
+extension TodayMainViewController: DeleteTodoItemFromTable {
+    func deleteCell(_ cell: TodoItemTableViewCell) {
+        guard let docId = cell.docId else { return }
+                
+        db.collection("todoData").document(docId).delete { error in
+                    if let error = error {
+                        print("Error removing document: \(error)")
+                    } else {
+                        print("Document successfully removed!")
+        
+                        DispatchQueue.main.async {
+                            self.loadTodoData()
+                            self.tableView.reloadData()
+                        }
+
+                    }
+        }
+    }
+    
+    
 }

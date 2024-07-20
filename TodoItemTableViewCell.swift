@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
+
+protocol DeleteTodoItemFromTable{
+    func deleteCell(_ cell: TodoItemTableViewCell)
+}
 
 class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var button: UIButton!
@@ -13,6 +19,12 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var headingLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var colorLabel: UIView!
+    
+    var docId: String?
+    
+    let db = Firestore.firestore()
+    
+     var delegate: DeleteTodoItemFromTable?
     
     @IBOutlet weak var deleteButton: UIButton!
     override func awakeFromNib() {
@@ -25,7 +37,9 @@ class TodoItemTableViewCell: UITableViewCell {
     }
     
     @IBAction func deleteButtonTapped(_ sender: Any) {
-        
+
+        delegate?.deleteCell(self)
+                    
     }
     
     @IBAction func alterButton(_ sender: UIButton) {
