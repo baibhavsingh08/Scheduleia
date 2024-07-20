@@ -87,7 +87,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="minus.circle.fill" catalog="system"/>
                                 <connections>
-                                    <action selector="deleteButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yJG-mt-mKo"/>
+                                    <action selector="editButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ciW-mi-fu9"/>
                                 </connections>
                             </button>
                         </subviews>

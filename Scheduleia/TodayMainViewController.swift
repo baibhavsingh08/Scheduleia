@@ -95,6 +95,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         vc?.taskDeadline = task.deadline
         vc?.taskPriority = task.priority
         vc?.docId = task.id
+
         
         navigationController?.pushViewController(vc!, animated: true)
     }
@@ -126,15 +127,43 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.button.setImage(UIImage(named: "unchecked"), for: .normal)
         cell.button.setImage(UIImage(named: "checked"), for: .selected)
         
+        print(model[indexPath.row].isDone)
         if(model[indexPath.row].isDone == true) {
             cell.button.isSelected = true
+        } else {
+            cell.button.isSelected = false
+
         }
         
         cell.docId = model[indexPath.row].id
         cell.isDone = model[indexPath.row].isDone
+        cell.priority = model[indexPath.row].priority
         cell.delegate = self
 
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Get the document ID
+            let task = model[indexPath.row]
+            let docId = task.id
+            
+            // Delete the document from Firestore
+            db.collection("todoData").document(docId).delete { error in
+                if let error = error {
+                    print("Error removing document: \(error)")
+                } else {
+                    print("Document successfully removed!")
+                   
+                    DispatchQueue.main.async {
+//                        self.loadTodoData()
+                        self.tableView.reloadData()
+                    }
+                    
+                }
+            }
+        }
     }
 
 }
@@ -161,22 +190,34 @@ extension TodayMainViewController: DeleteTodoItemFromTable {
         }
     }
     
-    func deleteCell(_ cell: TodoItemTableViewCell) {
-        guard let docId = cell.docId else { return }
-                
-        db.collection("todoData").document(docId).delete { error in
-                    if let error = error {
-                        print("Error removing document: \(error)")
-                    } else {
-                        print("Document successfully removed!")
+    func editCell(_ cell: TodoItemTableViewCell) {
+            
+        var stringPriority: String
         
-                        DispatchQueue.main.async {
-                            self.loadTodoData()
-                            self.tableView.reloadData()
-                        }
-
-                    }
+        switch cell.priority{
+            case 2:
+            stringPriority = "High"
+            case 1:
+            stringPriority = "Medium"
+            case 0:
+            stringPriority = "Low"
+            default:
+            stringPriority = "Unspecified"
         }
+
+        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit") as? AddTaskViewController
+
+        
+        vc?.descriptionText = cell.descriptionLabel.text
+        vc?.deadlineText = cell.deadlineLabel.text
+        vc?.headingText = cell.headingLabel.text
+        vc?.priorityText = stringPriority
+        vc?.cameFromShow = 1
+        vc?.docId = cell.docId
+        
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
     }
     
     

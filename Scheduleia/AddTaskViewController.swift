@@ -62,7 +62,7 @@ class AddTaskViewController: UIViewController {
                 print(0)
 
 
-            case "Hard":
+            case "High":
                 taskPriority = 2
                 imageView.backgroundColor = .red
                 priorityButton.backgroundColor = .red
@@ -122,7 +122,14 @@ class AddTaskViewController: UIViewController {
                         
                         if numberOfViewControllers >= 3 {
                             let targetViewController = viewControllers[numberOfViewControllers - 3]
-                            navigationController.popToViewController(targetViewController, animated: true)
+                            let viewControllerName = String(describing: type(of: targetViewController))
+                            
+                            if viewControllerName != "TodayMainViewController"{
+                                navigationController.popViewController(animated: true)
+
+                            } else {
+                                navigationController.popToViewController(targetViewController, animated: true)
+                            }
                         } else {
                             // If less than three view controllers, just pop the current one
                             navigationController.popViewController(animated: true)

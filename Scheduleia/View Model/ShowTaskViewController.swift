@@ -48,13 +48,9 @@ class ShowTaskViewController: UIViewController {
     
     @IBAction func editTask(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit") as? AddTaskViewController
-        
-//        vc?.headingLabel.text = titleLabel.text
-//        vc?.descriptionLabel.text = descriptionLabel.text
-//        vc?.taskPriority = (priorityLabel.text) as? Int  ?? 1
+
         
         vc?.descriptionText = descriptionLabel.text
-//        vc?.dateSelector = dateLabel.
         vc?.deadlineText = dateLabel.text
         vc?.headingText = titleLabel.text
         vc?.priorityText = priorityLabel.text

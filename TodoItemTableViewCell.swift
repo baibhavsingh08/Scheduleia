@@ -10,7 +10,7 @@ import FirebaseFirestore
 import Firebase
 
 protocol DeleteTodoItemFromTable{
-    func deleteCell(_ cell: TodoItemTableViewCell)
+    func editCell(_ cell: TodoItemTableViewCell)
     
     func taskCompleted(_ cell: TodoItemTableViewCell)
 }
@@ -24,6 +24,7 @@ class TodoItemTableViewCell: UITableViewCell {
     
     var docId: String?
     var isDone: Bool?
+    var priority: Int?
     
     let db = Firestore.firestore()
     
@@ -39,9 +40,9 @@ class TodoItemTableViewCell: UITableViewCell {
 
     }
     
-    @IBAction func deleteButtonTapped(_ sender: Any) {
+    @IBAction func editButtonTapped(_ sender: Any) {
 
-        delegate?.deleteCell(self)
+        delegate?.editCell(self)
                     
     }
     
@@ -49,4 +50,6 @@ class TodoItemTableViewCell: UITableViewCell {
         sender.isSelected.toggle()
         delegate?.taskCompleted(self)
     }
+    
+    
 }
