@@ -246,7 +246,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="x20-4d-Yh9"/>
@@ -285,8 +285,10 @@
                             <constraint firstItem="dnf-NH-KIs" firstAttribute="top" secondItem="UlD-oC-ryX" secondAttribute="top" id="MfX-Br-Gfq"/>
                             <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="dnf-NH-KIs" secondAttribute="trailing" id="VdT-Hm-7jD"/>
                             <constraint firstItem="dnf-NH-KIs" firstAttribute="leading" secondItem="UlD-oC-ryX" secondAttribute="leading" id="f1m-18-PGQ"/>
+                            <constraint firstItem="mAG-Ah-m6A" firstAttribute="leading" secondItem="5W6-D0-nH2" secondAttribute="leading" id="gA0-7a-1Yw"/>
                             <constraint firstItem="mAG-Ah-m6A" firstAttribute="top" secondItem="5W6-D0-nH2" secondAttribute="top" id="mji-yg-wvh"/>
                             <constraint firstItem="dnf-NH-KIs" firstAttribute="trailing" secondItem="UlD-oC-ryX" secondAttribute="trailing" id="uAe-BM-cWH"/>
+                            <constraint firstAttribute="trailing" secondItem="mAG-Ah-m6A" secondAttribute="trailing" id="y7W-c8-99m"/>
                             <constraint firstAttribute="bottom" secondItem="dnf-NH-KIs" secondAttribute="bottom" constant="10" id="yUx-2t-bkQ"/>
                         </constraints>
                     </view>
@@ -601,7 +603,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="50"/>
+                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="40"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="7uK-DB-xAf"/>
@@ -636,6 +638,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="QNx-dv-S7N" firstAttribute="top" secondItem="iUh-Fu-ZdZ" secondAttribute="top" id="2TD-LC-lnQ"/>
+                            <constraint firstItem="3BV-JA-7tk" firstAttribute="leading" secondItem="iUh-Fu-ZdZ" secondAttribute="leading" id="4Y0-TY-hfD"/>
+                            <constraint firstAttribute="trailing" secondItem="3BV-JA-7tk" secondAttribute="trailing" id="QuH-Dz-bAn"/>
                             <constraint firstItem="QNx-dv-S7N" firstAttribute="leading" secondItem="HjB-fH-jKM" secondAttribute="leading" id="SYt-vk-zA4"/>
                             <constraint firstItem="3BV-JA-7tk" firstAttribute="leading" secondItem="HjB-fH-jKM" secondAttribute="leading" id="UyB-J0-uYo"/>
                             <constraint firstItem="3BV-JA-7tk" firstAttribute="trailing" secondItem="HjB-fH-jKM" secondAttribute="trailing" id="Z76-yU-nlF"/>
@@ -852,7 +856,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oKN-Og-p7m"/>
-        <segue reference="Llu-ry-6an"/>
+        <segue reference="8Gu-nx-gnW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
