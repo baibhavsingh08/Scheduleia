@@ -11,6 +11,8 @@ import Firebase
 
 protocol DeleteTodoItemFromTable{
     func deleteCell(_ cell: TodoItemTableViewCell)
+    
+    func taskCompleted(_ cell: TodoItemTableViewCell)
 }
 
 class TodoItemTableViewCell: UITableViewCell {
@@ -21,6 +23,7 @@ class TodoItemTableViewCell: UITableViewCell {
     @IBOutlet weak var colorLabel: UIView!
     
     var docId: String?
+    var isDone: Bool?
     
     let db = Firestore.firestore()
     
@@ -44,5 +47,6 @@ class TodoItemTableViewCell: UITableViewCell {
     
     @IBAction func alterButton(_ sender: UIButton) {
         sender.isSelected.toggle()
+        delegate?.taskCompleted(self)
     }
 }

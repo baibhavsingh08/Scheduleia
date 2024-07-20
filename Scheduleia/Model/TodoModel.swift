@@ -16,5 +16,5 @@ struct TodoModel{
     var email: String
     var time: Int
     var id: String
-    
+    var isDone: Bool
 }
