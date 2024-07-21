@@ -47,7 +47,7 @@ class TodayMainViewController: UIViewController {
     
     func loadTodoData(){
         
-        db.collection("todoData").order(by: "deadline").addSnapshotListener({(QuerySnapshot,error) in
+        db.collection("todoData").order(by: "time", descending: true).addSnapshotListener({(QuerySnapshot,error) in
             self.model = []
             if((error) != nil){
                 print(error!)

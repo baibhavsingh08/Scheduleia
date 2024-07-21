@@ -141,7 +141,8 @@ class AddTaskViewController: UIViewController {
         } else {
             if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
                 
-                let msgDate = Date().timeIntervalSince1970
+                let msgDate = Date().timeIntervalSince(msgDeadline)
+                print(msgDate)
                 
                 let date = msgDeadline
                 let dateFormatter = DateFormatter()
@@ -149,17 +150,26 @@ class AddTaskViewController: UIViewController {
                 dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
                 let dateString = dateFormatter.string(from: date)
                 
-                let newDoc = db.collection("todoData").document()
-                newDoc.setData(["id": newDoc.documentID,
-                                "decription": msgDescription,
-                                "heading": msgHeading,
-                                "deadline": dateString,
-                                "priority": taskPriority,
-                                "email": msgSender,
-                                "isDone": false,
-                                "time": msgDate,
-                                "date": msgDeadline] , completion: nil)
-                print(msgDeadline)
+                if(msgDate <= 0){
+                    let newDoc = db.collection("todoData").document()
+                    newDoc.setData(["id": newDoc.documentID,
+                                    "decription": msgDescription,
+                                    "heading": msgHeading,
+                                    "deadline": dateString,
+                                    "priority": taskPriority,
+                                    "email": msgSender,
+                                    "isDone": false,
+                                    "time": msgDate,
+                                    "date": msgDeadline] , completion: nil)
+                    print(msgDeadline)
+                }else {
+                    let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                }
                 
             }else{
                 print("err")
