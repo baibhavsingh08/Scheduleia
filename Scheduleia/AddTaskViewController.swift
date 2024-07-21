@@ -12,7 +12,7 @@ import FirebaseFirestore
 class AddTaskViewController: UIViewController {
     
     let db = Firestore.firestore()
-
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var dateSelector: UIDatePicker!
     @IBOutlet weak var descriptionLabel: UITextField!
@@ -27,7 +27,7 @@ class AddTaskViewController: UIViewController {
     var cameFromShow: Int?
     var docId: String?
     var isDone: Bool?
-//    var date: Timestamp?
+    //    var date: Timestamp?
     
     var taskPriority = 0
     override func viewDidLoad() {
@@ -48,8 +48,8 @@ class AddTaskViewController: UIViewController {
             print(dateInDate)
         }
         
-//        print(priorityText!)
-
+        //        print(priorityText!)
+        
         if let priorityText {
             switch priorityText {
             case "Low":
@@ -62,15 +62,15 @@ class AddTaskViewController: UIViewController {
                 imageView.backgroundColor = .yellow
                 priorityButton.backgroundColor = .yellow
                 print(0)
-
-
+                
+                
             case "High":
                 taskPriority = 2
                 imageView.backgroundColor = .red
                 priorityButton.backgroundColor = .red
                 print(0)
-
-
+                
+                
             default:
                 taskPriority = 0
                 imageView.backgroundColor = .blue
@@ -78,7 +78,7 @@ class AddTaskViewController: UIViewController {
                 print(0)
             }
         }
-
+        
         
         print(db)
         
@@ -98,45 +98,45 @@ class AddTaskViewController: UIViewController {
             self.priorityButton.backgroundColor = .yellow
             
             self.imageView.backgroundColor = .yellow
-
+            
         }
         
         let lowPriority = UIAction(title: "Low") { _ in
             self.taskPriority = 0
             self.priorityButton.backgroundColor = .blue
             self.imageView.backgroundColor = .blue
-
+            
         }
         
         let menu = UIMenu(title: "", children: [lowPriority,mediumPriority,highPriority])
         
         priorityButton.menu = menu
         priorityButton.showsMenuAsPrimaryAction = true
-
+        
     }
     
     @IBAction func saveTask(_ sender: Any) {
         if let id = docId {
             updateData(id)
             if let navigationController = self.navigationController {
-                    let viewControllers = navigationController.viewControllers
-                    let numberOfViewControllers = viewControllers.count
-                    
-                    if numberOfViewControllers >= 3 {
-                        let targetViewController = viewControllers[numberOfViewControllers - 3]
-                        let viewControllerName = String(describing: type(of: targetViewController))
-                        print(viewControllerName)
-                        if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
-                            navigationController.popViewController(animated: true)
-
-                        } else {
-                            navigationController.popToViewController(targetViewController, animated: true)
-                        }
-                    } else {
-                        // If less than three view controllers, just pop the current one
+                let viewControllers = navigationController.viewControllers
+                let numberOfViewControllers = viewControllers.count
+                
+                if numberOfViewControllers >= 3 {
+                    let targetViewController = viewControllers[numberOfViewControllers - 3]
+                    let viewControllerName = String(describing: type(of: targetViewController))
+                    print(viewControllerName)
+                    if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
                         navigationController.popViewController(animated: true)
+                        
+                    } else {
+                        navigationController.popToViewController(targetViewController, animated: true)
                     }
-                    }
+                } else {
+                    // If less than three view controllers, just pop the current one
+                    navigationController.popViewController(animated: true)
+                }
+            }
             
         } else {
             if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
@@ -166,35 +166,46 @@ class AddTaskViewController: UIViewController {
                     let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
                     
                     let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-
+                    
                     alert.addAction(action)
                     self.present(alert, animated: true)
                 }
                 
             }else{
-                print("err")
+                let alert = UIAlertController(title: "Error", message: "Heading is not optional", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
             }
-            
             
             navigationController?.popViewController(animated: true)
         }
     }
     
     func updateData(_ id: String) {
-        guard  let _ = headingLabel.text else {
-                print("Missing fields for update")
-                return
-            }
+        guard  let htext = headingLabel.text, !htext.isEmpty else {
+            let alert = UIAlertController(title: "Error", message: "Heading must not be empty", preferredStyle: .alert)
             
+            let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            
+            alert.addAction(action)
+            self.present(alert, animated: true)
+            return
+        }
+        
+        
+        
         let documentRef = db.collection("todoData").document(id)
-
+        
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
         let dateString = dateFormatter.string(from: date)
         
-        documentRef.updateData(["id": id, 
+        documentRef.updateData(["id": id,
                                 "decription": self.descriptionLabel.text!,
                                 "heading": self.headingLabel.text!,
                                 "deadline": dateString,
@@ -209,11 +220,12 @@ class AddTaskViewController: UIViewController {
             }
         }
         
-                    
+        
     }
     
     
     
+    
+    
+    
 }
-
-
