@@ -828,21 +828,21 @@
                                             <constraint firstItem="gfC-x0-UMO" firstAttribute="leading" secondItem="qc8-f8-ryQ" secondAttribute="leading" id="xqD-Li-Uvg"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qwe-dI-1XE">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qwe-dI-1XE">
                                         <rect key="frame" x="0.0" y="361.66666666666674" width="373" height="353.33333333333326"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-nP-qDq">
-                                                <rect key="frame" x="0.0" y="0.0" width="373" height="299"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="373" height="166.66666666666666"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88x-gF-vrf">
-                                                        <rect key="frame" x="0.0" y="242.99999999999994" width="56" height="56"/>
+                                                        <rect key="frame" x="0.0" y="110.66666666666669" width="56" height="56"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="56" id="7DE-xs-GtL"/>
                                                             <constraint firstAttribute="width" constant="56" id="7jW-wN-nph"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-N5-Uus">
-                                                        <rect key="frame" x="96" y="264.66666666666669" width="277" height="34.333333333333314"/>
+                                                        <rect key="frame" x="96" y="132.33333333333331" width="277" height="34.333333333333343"/>
                                                         <color key="tintColor" systemColor="separatorColor"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="filled" title="Set Priority">
@@ -851,23 +851,34 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJS-X0-lpg">
-                                                <rect key="frame" x="0.0" y="318.99999999999994" width="373" height="34.333333333333314"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-P1-6Yy">
+                                                <rect key="frame" x="0.0" y="186.66666666666669" width="373" height="166.66666666666669"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJS-X0-lpg">
+                                                        <rect key="frame" x="0.0" y="63.333333333333258" width="373" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="wQK-DE-dd9"/>
+                                                        </constraints>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                                        <connections>
+                                                            <action selector="saveTask:" destination="jKZ-N1-UOS" eventType="touchUpInside" id="8xc-kj-IOH"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="34.329999999999998" id="YlL-0v-bS2"/>
+                                                    <constraint firstItem="oJS-X0-lpg" firstAttribute="leading" secondItem="zFr-P1-6Yy" secondAttribute="leading" id="ShN-cO-P5L"/>
+                                                    <constraint firstItem="oJS-X0-lpg" firstAttribute="centerY" secondItem="zFr-P1-6Yy" secondAttribute="centerY" id="c7H-zI-aSj"/>
+                                                    <constraint firstAttribute="trailing" secondItem="oJS-X0-lpg" secondAttribute="trailing" id="pXF-9K-8wy"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
-                                                <connections>
-                                                    <action selector="saveTask:" destination="jKZ-N1-UOS" eventType="touchUpInside" id="8xc-kj-IOH"/>
-                                                </connections>
-                                            </button>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="Zga-nP-qDq" firstAttribute="leading" secondItem="Qwe-dI-1XE" secondAttribute="leading" id="8D8-eQ-joK"/>
+                                            <constraint firstItem="zFr-P1-6Yy" firstAttribute="leading" secondItem="Qwe-dI-1XE" secondAttribute="leading" id="EjT-DY-7Kz"/>
                                             <constraint firstAttribute="trailing" secondItem="Zga-nP-qDq" secondAttribute="trailing" id="KYu-jm-gmt"/>
-                                            <constraint firstItem="oJS-X0-lpg" firstAttribute="leading" secondItem="Qwe-dI-1XE" secondAttribute="leading" id="YMO-DH-LpR"/>
-                                            <constraint firstAttribute="trailing" secondItem="oJS-X0-lpg" secondAttribute="trailing" id="yj4-LX-C1T"/>
+                                            <constraint firstAttribute="trailing" secondItem="zFr-P1-6Yy" secondAttribute="trailing" id="e9u-Q8-AnF"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>

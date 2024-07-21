@@ -199,6 +199,8 @@ class AddTaskViewController: UIViewController {
         
         let documentRef = db.collection("todoData").document(id)
         
+        let msgDate = Date().timeIntervalSince(self.dateSelector.date)
+        
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
@@ -212,7 +214,7 @@ class AddTaskViewController: UIViewController {
                                 "priority": self.taskPriority,
                                 "email": Auth.auth().currentUser?.email ?? "",
                                 "isDone": isDone!,
-                                "time": Date().timeIntervalSince1970]) { error in
+                                "time": msgDate]) { error in
             if let error = error {
                 print("Error updating document: \(error.localizedDescription)")
             } else {
