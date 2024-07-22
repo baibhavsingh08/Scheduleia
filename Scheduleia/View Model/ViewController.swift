@@ -27,7 +27,6 @@ class ViewController: UIViewController {
     
     func animateTitle(){
         titleLabel.text = ""
-        
         let titleName = "Scheduleia"
         
         var index = 1.0;
