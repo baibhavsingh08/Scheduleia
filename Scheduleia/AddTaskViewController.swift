@@ -92,7 +92,6 @@ class AddTaskViewController: UIViewController {
                 if numberOfViewControllers >= 3 {
                     let targetViewController = viewControllers[numberOfViewControllers - 3]
                     let viewControllerName = String(describing: type(of: targetViewController))
-                    print(viewControllerName)
                     if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
                         navigationController.popViewController(animated: true)
                     } else {
@@ -155,7 +154,6 @@ class AddTaskViewController: UIViewController {
             return
         }
         
-        let documentRef = db.collection("todoData").document(id)
         let msgDate = Date().timeIntervalSince(self.dateSelector.date)
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
@@ -163,22 +161,31 @@ class AddTaskViewController: UIViewController {
         dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
         let dateString = dateFormatter.string(from: date)
         
-        documentRef.updateData(["id": id,
-                                "decription": self.descriptionLabel.text!,
-                                "heading": self.headingLabel.text!,
-                                "deadline": dateString,
-                                "priority": self.taskPriority,
-                                "email": Auth.auth().currentUser?.email ?? "",
-                                "isDone": isDone!,
-                                "time": msgDate]) { error in
-            if let error = error {
-                let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                
-                alert.addAction(action)
-                self.present(alert, animated: true)
-            } 
+        if msgDate <= 0{
+            db.collection("todoData").document(id).updateData(["id": id,
+                                                               "decription": self.descriptionLabel.text!,
+                                                               "heading": self.headingLabel.text!,
+                                                               "deadline": dateString,
+                                                               "priority": self.taskPriority,
+                                                               "email": Auth.auth().currentUser?.email ?? "",
+                                                               "isDone": isDone!,
+                                                               "time": msgDate]) { error in
+                if let error = error {
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    
+                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                    
+                    alert.addAction(action)
+                    self.present(alert, animated: true)
+                }
+            }
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            
+            alert.addAction(action)
+            self.present(alert, animated: true)
         }
     }
 }

@@ -60,7 +60,7 @@ class TodayMainViewController: UIViewController {
                 }
             }
         })
-        var x = model.sorted{$0.deadline < $1.deadline}
+        let x = model.sorted{$0.deadline < $1.deadline}
         model = x
     }
 }

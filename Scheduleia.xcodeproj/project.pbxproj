@@ -22,7 +22,6 @@
 		B95B15332C468CD300E6F104 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = B95B15322C468CD300E6F104 /* FirebaseFirestoreCombine-Community */; };
 		B95B15352C468CD300E6F104 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B95B15342C468CD300E6F104 /* FirebaseFirestoreSwift */; };
 		B95B15372C468DB700E6F104 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15362C468DB700E6F104 /* RegisterViewController.swift */; };
-		B95B15392C46979500E6F104 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B15382C46979500E6F104 /* MainViewController.swift */; };
 		B95B153C2C47910D00E6F104 /* TodoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */; };
 		B95B153D2C47910D00E6F104 /* TodoItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */; };
 		B95B153F2C47A59500E6F104 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95B153E2C47A59500E6F104 /* MainTabBarController.swift */; };
@@ -45,7 +44,6 @@
 		B95B15192C46820B00E6F104 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B95B151B2C468B2400E6F104 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B95B15362C468DB700E6F104 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		B95B15382C46979500E6F104 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; wrapsLines = 0; };
 		B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B95B153E2C47A59500E6F104 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */,
 				B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */,
 				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
-				B95B15382C46979500E6F104 /* MainViewController.swift */,
 				B95B15192C46820B00E6F104 /* LoginViewController.swift */,
 				B95B15362C468DB700E6F104 /* RegisterViewController.swift */,
 				B9ABDF782C464B0900D2B493 /* ViewController.swift */,
@@ -240,7 +237,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B95B15392C46979500E6F104 /* MainViewController.swift in Sources */,
 				B95B15432C47A76A00E6F104 /* AllTaskMainViewController.swift in Sources */,
 				B9ABDF792C464B0900D2B493 /* ViewController.swift in Sources */,
 				B95B153F2C47A59500E6F104 /* MainTabBarController.swift in Sources */,

@@ -54,7 +54,6 @@ class LoginViewController: UIViewController {
                 guard let _ = self else { return }
                 
                 if let e = error {
-                    print("error");
                     let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
                     
                     let action = UIAlertAction(title: "Okay", style: .cancel, handler: { _ in
@@ -65,7 +64,6 @@ class LoginViewController: UIViewController {
                     alert.addAction(action)
                     self?.present(alert, animated: true)
                 }else{
-                    print("login")
                     self?.performSegue(withIdentifier: "LoginToMain", sender: self)
                 }
             }
