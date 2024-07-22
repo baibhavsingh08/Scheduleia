@@ -45,7 +45,7 @@
 		B95B151B2C468B2400E6F104 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B95B15362C468DB700E6F104 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItemTableViewCell.swift; sourceTree = SOURCE_ROOT; };
-		B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoItemTableViewCell.xib; sourceTree = SOURCE_ROOT; };
+		B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TodoItemTableViewCell.xib; path = Scheduleia/views/TodoItemTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		B95B153E2C47A59500E6F104 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayMainViewController.swift; path = Scheduleia/TodayMainViewController.swift; sourceTree = SOURCE_ROOT; };
 		B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTaskMainViewController.swift; sourceTree = "<group>"; };
@@ -95,9 +95,8 @@
 				B95B15402C47A73C00E6F104 /* TodayMainViewController.swift */,
 				B95B15422C47A76A00E6F104 /* AllTaskMainViewController.swift */,
 				B95B153A2C47910D00E6F104 /* TodoItemTableViewCell.swift */,
-				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
-				B95B15192C46820B00E6F104 /* LoginViewController.swift */,
 				B95B15362C468DB700E6F104 /* RegisterViewController.swift */,
+				B95B15192C46820B00E6F104 /* LoginViewController.swift */,
 				B9ABDF782C464B0900D2B493 /* ViewController.swift */,
 				B95B153E2C47A59500E6F104 /* MainTabBarController.swift */,
 			);
@@ -134,8 +133,8 @@
 				B99184332C48028900420DEE /* Model */,
 				B9ABDF742C464B0900D2B493 /* AppDelegate.swift */,
 				B9ABDF762C464B0900D2B493 /* SceneDelegate.swift */,
+				B9FC3DA92C4E34AA00F5AAF2 /* views */,
 				B95B15182C46804500E6F104 /* View Model */,
-				B9ABDF7A2C464B0900D2B493 /* Main.storyboard */,
 				B9ABDF802C464B0A00D2B493 /* Assets.xcassets */,
 				B9ABDF822C464B0A00D2B493 /* LaunchScreen.storyboard */,
 				B9ABDF852C464B0A00D2B493 /* Info.plist */,
@@ -143,6 +142,15 @@
 				B9ABDF7D2C464B0900D2B493 /* Scheduleia.xcdatamodeld */,
 			);
 			path = Scheduleia;
+			sourceTree = "<group>";
+		};
+		B9FC3DA92C4E34AA00F5AAF2 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				B9ABDF7A2C464B0900D2B493 /* Main.storyboard */,
+				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

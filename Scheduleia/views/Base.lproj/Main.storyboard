@@ -387,16 +387,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-fY-sFg">
-                                <rect key="frame" x="10" y="103" width="249" height="45"/>
+                                <rect key="frame" x="10" y="103" width="160.66666666666666" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Ah-Ofe">
-                                        <rect key="frame" x="0.0" y="0.0" width="146.66666666666666" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Ah-Ofe">
+                                        <rect key="frame" x="0.0" y="0.0" width="110.66666666666667" height="50"/>
                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-aw-zv2">
-                                        <rect key="frame" x="146.66666666666666" y="0.0" width="102.33333333333334" height="45"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-aw-zv2">
+                                        <rect key="frame" x="110.66666666666669" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="40"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -404,7 +404,7 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-sC-Lb6">
-                                <rect key="frame" x="0.0" y="158" width="393" height="618"/>
+                                <rect key="frame" x="0.0" y="163" width="393" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yju-jM-R0K">
@@ -436,7 +436,7 @@
                             <constraint firstItem="dTc-sC-Lb6" firstAttribute="leading" secondItem="0UM-91-kx4" secondAttribute="leading" id="pIm-jd-uYl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Today's Tasks" image="today" selectedImage="today" id="pye-cq-Z8y"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="today" selectedImage="today" id="pye-cq-Z8y"/>
                     <navigationItem key="navigationItem" title="Today's Tasks" id="2aA-QK-Ovy"/>
                     <connections>
                         <outlet property="addButton" destination="Yju-jM-R0K" id="17t-vQ-Ti6"/>
@@ -898,7 +898,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="up9-Mb-UHA"/>
+        <segue reference="oKN-Og-p7m"/>
         <segue reference="Llu-ry-6an"/>
     </inferredMetricsTieBreakers>
     <resources>
