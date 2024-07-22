@@ -9,6 +9,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
 
+    var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -20,9 +22,19 @@ class LoginViewController: UIViewController {
         
         passwordLabel.layer.cornerRadius = passwordLabel.frame.size.height/2
         passwordLabel.clipsToBounds = true
+        
+        setupActivityIndicator()
     }
     
+    func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
+            view.addSubview(activityIndicator)
+        }
+    
     @IBAction func forgetButtonPressed(_ sender: Any) {
+        activityIndicator.startAnimating()
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text ?? "") { error in
                     if let e = error {
                         let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
@@ -30,7 +42,7 @@ class LoginViewController: UIViewController {
                         let action = UIAlertAction(title: "Okay", style: .cancel, handler: { _ in
                             self.emailTextField.text = ""
                             })
-                        
+                        self.activityIndicator.stopAnimating()
                         alert.addAction(action)
                         self.present(alert, animated: true)
                     } else {
@@ -40,7 +52,7 @@ class LoginViewController: UIViewController {
                             self.emailTextField.text = ""
                             self.passwordTextField.text = ""
                             })
-
+                        self.activityIndicator.stopAnimating()
                         alert.addAction(action)
                         self.present(alert, animated: true)
                     }
@@ -48,6 +60,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton){
+        activityIndicator.startAnimating()
         
         if let email = emailTextField.text , let password = passwordTextField.text {
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
@@ -62,6 +75,7 @@ class LoginViewController: UIViewController {
                         })
 
                     alert.addAction(action)
+                    self?.activityIndicator.stopAnimating()
                     self?.present(alert, animated: true)
                 }else{
                     self?.performSegue(withIdentifier: "LoginToMain", sender: self)

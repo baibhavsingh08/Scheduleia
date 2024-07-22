@@ -9,6 +9,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    var activityIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +22,16 @@ class RegisterViewController: UIViewController {
         
         passwordLabel.layer.cornerRadius = passwordLabel.frame.size.height/2
         passwordLabel.clipsToBounds = true
+        
+        setupActivityIndicator()
     }
+    
+    func setupActivityIndicator() {
+        activityIndicator = UIActivityIndicatorView(style: .large)
+            activityIndicator.center = view.center
+            activityIndicator.hidesWhenStopped = true
+            view.addSubview(activityIndicator)
+        }
     
     func strongPass(_ password: String) -> Bool {
         var hasUppercase = false
@@ -43,6 +54,7 @@ class RegisterViewController: UIViewController {
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {
+        activityIndicator.startAnimating()
         if let email = emailTextField.text , let password = passwordTextField.text {
     
             if(strongPass(password) ) {
@@ -57,6 +69,7 @@ class RegisterViewController: UIViewController {
                         })
                         
                         alert.addAction(action)
+                        self.activityIndicator.stopAnimating()
                         self.present(alert, animated: true)
                     }else{
                         self.performSegue(withIdentifier: "RegisterToMain", sender: self)
@@ -70,6 +83,7 @@ class RegisterViewController: UIViewController {
                 })
                 
                 alert.addAction(action)
+                self.activityIndicator.stopAnimating()
                 self.present(alert, animated: true)
                 }
         }

@@ -118,7 +118,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.deadlineLabel.text = model[indexPath.row].deadline
       
         cell.button.setImage(UIImage(systemName: "square"), for: .normal)
-        cell.button.setImage(UIImage(named: "checked"), for: .selected)
+        cell.button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         
         if(model[indexPath.row].isDone == true) {
             cell.button.isSelected = true
