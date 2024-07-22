@@ -831,10 +831,11 @@
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-N5-Uus">
                                                         <rect key="frame" x="96" y="132.33333333333331" width="277" height="34.333333333333343"/>
+                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="tintColor" systemColor="separatorColor"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Set Priority">
-                                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Set Priority">
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -844,12 +845,13 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oJS-X0-lpg">
                                                         <rect key="frame" x="0.0" y="63.333333333333258" width="373" height="40"/>
+                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="wQK-DE-dd9"/>
                                                         </constraints>
-                                                        <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                                         <connections>
                                                             <action selector="saveTask:" destination="jKZ-N1-UOS" eventType="touchUpInside" id="8xc-kj-IOH"/>
                                                         </connections>
