@@ -32,15 +32,12 @@ class ViewController: UIViewController {
         
         var index = 1.0;
         
-        for x in titleName{
+        for x in titleName {
             Timer.scheduledTimer(withTimeInterval: 0.1*index, repeats: false, block: {_ in
                 self.titleLabel.text?.append(x)
             })
-            
             index += 1
         }
     }
-
-
 }
 

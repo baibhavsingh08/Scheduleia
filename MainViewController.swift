@@ -1,27 +1,18 @@
-//
-//  MainViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 16/07/24.
-//
-
 import UIKit
 import FirebaseAuth
 
 class MainViewController: UIViewController {
 
-    
     let tableView: UITableView = {
         let table = UITableView()
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return table
-    }()
-    
+    } ()
     
     let addButton: UIButton = {
         let button = UIButton()
         return button
-    }()
+    } ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,26 +25,17 @@ class MainViewController: UIViewController {
         tableView.dataSource = self
         tableView.frame = view.bounds
         
-        
-//        tableView.backgroundColor = UIColor.lightGray
-        
-
-        
         tableView.register(UINib(nibName: "TodoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-
     }
     
-
     @IBAction func logoutButtonpressed(_ sender: Any) {
         
         let firebaseAuth = Auth.auth()
         do {
           try firebaseAuth.signOut()
             navigationController?.popToRootViewController(animated: true)
-            
-        } catch let signOutError as NSError {
-          print("Error signing out: %@", signOutError)
-            let alert = UIAlertController(title: "Error", message: signOutError.localizedDescription, preferredStyle: .alert)
+        } catch let e as NSError {
+            let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
             
             let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
 
@@ -61,9 +43,7 @@ class MainViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
-    
 }
-
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource  {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

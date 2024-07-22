@@ -1,17 +1,9 @@
-//
-//  TodoItemTableViewCell.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 17/07/24.
-//
-
 import UIKit
 import FirebaseFirestore
 import Firebase
 
 protocol DeleteTodoItemFromTable{
     func editCell(_ cell: TodoItemTableViewCell)
-    
     func taskCompleted(_ cell: TodoItemTableViewCell)
 }
 
@@ -27,8 +19,7 @@ class TodoItemTableViewCell: UITableViewCell {
     var priority: Int?
     
     let db = Firestore.firestore()
-    
-     var delegate: DeleteTodoItemFromTable?
+    var delegate: DeleteTodoItemFromTable?
     
     @IBOutlet weak var deleteButton: UIButton!
     override func awakeFromNib() {
@@ -37,19 +28,14 @@ class TodoItemTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {
-
         delegate?.editCell(self)
-                    
     }
     
     @IBAction func alterButton(_ sender: UIButton) {
         sender.isSelected.toggle()
         delegate?.taskCompleted(self)
     }
-    
-    
 }

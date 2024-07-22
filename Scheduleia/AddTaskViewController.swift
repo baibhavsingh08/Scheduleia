@@ -1,10 +1,3 @@
-//
-//  AddTaskViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 18/07/24.
-//
-
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
@@ -19,7 +12,6 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var headingLabel: UITextField!
     @IBOutlet weak var priorityButton: UIButton!
     
-    
     var descriptionText: String?
     var headingText: String?
     var priorityText: String?
@@ -27,7 +19,6 @@ class AddTaskViewController: UIViewController {
     var cameFromShow: Int?
     var docId: String?
     var isDone: Bool?
-    //    var date: Timestamp?
     
     var taskPriority = 0
     override func viewDidLoad() {
@@ -45,79 +36,55 @@ class AddTaskViewController: UIViewController {
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.setDate(dateInDate, animated: true)
-            print(dateInDate)
         }
-        
-        //        print(priorityText!)
-        
+                
         if let priorityText {
             switch priorityText {
             case "Low":
                 taskPriority = 0
                 imageView.backgroundColor = .blue
-                priorityButton.backgroundColor = .blue
-                print(0)
+                
             case "Medium":
                 taskPriority = 1
                 imageView.backgroundColor = .yellow
-                priorityButton.backgroundColor = .yellow
-                print(0)
-                
-                
+                            
             case "High":
                 taskPriority = 2
                 imageView.backgroundColor = .red
-                priorityButton.backgroundColor = .red
-                print(0)
-                
-                
+                                
             default:
                 taskPriority = 0
                 imageView.backgroundColor = .blue
-                priorityButton.backgroundColor = .blue
-                print(0)
             }
         }
         
-        
-        print(db)
-        
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
-        
-        
-        
+    
         let highPriority = UIAction(title: "High") { _ in
             self.taskPriority = 2
-            self.priorityButton.backgroundColor = .red
             self.imageView.backgroundColor = .red
         }
         
         let mediumPriority = UIAction(title: "Medium") { _ in
             self.taskPriority = 1
-            self.priorityButton.backgroundColor = .yellow
-            
             self.imageView.backgroundColor = .yellow
-            
         }
         
         let lowPriority = UIAction(title: "Low") { _ in
             self.taskPriority = 0
-            self.priorityButton.backgroundColor = .blue
             self.imageView.backgroundColor = .blue
-            
         }
         
         let menu = UIMenu(title: "", children: [lowPriority,mediumPriority,highPriority])
-        
         priorityButton.menu = menu
         priorityButton.showsMenuAsPrimaryAction = true
-        
     }
     
     @IBAction func saveTask(_ sender: Any) {
         if let id = docId {
             updateData(id)
+            
             if let navigationController = self.navigationController {
                 let viewControllers = navigationController.viewControllers
                 let numberOfViewControllers = viewControllers.count
@@ -128,22 +95,17 @@ class AddTaskViewController: UIViewController {
                     print(viewControllerName)
                     if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
                         navigationController.popViewController(animated: true)
-                        
                     } else {
                         navigationController.popToViewController(targetViewController, animated: true)
                     }
                 } else {
-                    // If less than three view controllers, just pop the current one
                     navigationController.popViewController(animated: true)
                 }
             }
-            
         } else {
             if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
                 
                 let msgDate = Date().timeIntervalSince(msgDeadline)
-                print(msgDate)
-                
                 let date = msgDeadline
                 let dateFormatter = DateFormatter()
                 
@@ -161,8 +123,7 @@ class AddTaskViewController: UIViewController {
                                     "isDone": false,
                                     "time": msgDate,
                                     "date": msgDeadline] , completion: nil)
-                    print(msgDeadline)
-                }else {
+                } else {
                     let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
                     
                     let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
@@ -171,7 +132,7 @@ class AddTaskViewController: UIViewController {
                     self.present(alert, animated: true)
                 }
                 
-            }else{
+            } else {
                 let alert = UIAlertController(title: "Error", message: "Heading is not optional", preferredStyle: .alert)
                 
                 let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
@@ -179,7 +140,6 @@ class AddTaskViewController: UIViewController {
                 alert.addAction(action)
                 self.present(alert, animated: true)
             }
-            
             navigationController?.popViewController(animated: true)
         }
     }
@@ -195,12 +155,8 @@ class AddTaskViewController: UIViewController {
             return
         }
         
-        
-        
         let documentRef = db.collection("todoData").document(id)
-        
         let msgDate = Date().timeIntervalSince(self.dateSelector.date)
-        
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
@@ -216,18 +172,13 @@ class AddTaskViewController: UIViewController {
                                 "isDone": isDone!,
                                 "time": msgDate]) { error in
             if let error = error {
-                print("Error updating document: \(error.localizedDescription)")
-            } else {
-                print("Document successfully updated")
-            }
+                let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            } 
         }
-        
-        
     }
-    
-    
-    
-    
-    
-    
 }

@@ -1,20 +1,11 @@
-//
-//  LoginViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 16/07/24.
-//
-
 import UIKit
 import Firebase
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var passwordLabel: UITextField!
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
 
@@ -29,9 +20,8 @@ class LoginViewController: UIViewController {
         
         passwordLabel.layer.cornerRadius = passwordLabel.frame.size.height/2
         passwordLabel.clipsToBounds = true
-        
-        
     }
+    
     @IBAction func forgetButtonPressed(_ sender: Any) {
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text ?? "") { error in
                     if let e = error {
@@ -39,9 +29,8 @@ class LoginViewController: UIViewController {
                         
                         let action = UIAlertAction(title: "Okay", style: .cancel, handler: { _ in
                             self.emailTextField.text = ""
-                            self.passwordTextField.text = ""
                             })
-     
+                        
                         alert.addAction(action)
                         self.present(alert, animated: true)
                     } else {
@@ -52,9 +41,6 @@ class LoginViewController: UIViewController {
                             self.passwordTextField.text = ""
                             })
 
-                            
-                        
-                        
                         alert.addAction(action)
                         self.present(alert, animated: true)
                     }
@@ -84,8 +70,5 @@ class LoginViewController: UIViewController {
                 }
             }
         }
-        
     }
-  
-
 }

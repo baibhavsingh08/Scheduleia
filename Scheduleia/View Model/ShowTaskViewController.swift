@@ -1,10 +1,3 @@
-//
-//  ShowTaskViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 19/07/24.
-//
-
 import UIKit
 
 class ShowTaskViewController: UIViewController {
@@ -13,15 +6,14 @@ class ShowTaskViewController: UIViewController {
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    
     var priority = 0
-
     var taskHeading: String?
     var taskDescription: String?
     var taskDeadline: String?
     var taskPriority: Int?
     var docId: String?
     var isDone: Bool?
-//    var date: Timestamp?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,17 +33,11 @@ class ShowTaskViewController: UIViewController {
             default:
                 priorityLabel.text = "Unspecified"
             }
-            
-           
         }
     }
     
-
-    
-    
     @IBAction func editTask(_ sender: Any) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit") as? AddTaskViewController
-
         
         vc?.descriptionText = descriptionLabel.text
         vc?.deadlineText = dateLabel.text
