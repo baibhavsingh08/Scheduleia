@@ -32,7 +32,7 @@ class AddTaskViewController: UIViewController {
         }
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
+        dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
         
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.setDate(dateInDate, animated: true)
@@ -108,7 +108,7 @@ class AddTaskViewController: UIViewController {
                 let date = msgDeadline
                 let dateFormatter = DateFormatter()
                 
-                dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
+                dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
                 let dateString = dateFormatter.string(from: date)
                 
                 if(msgDate <= 0){
@@ -158,7 +158,7 @@ class AddTaskViewController: UIViewController {
         let date = dateSelector.date
         let dateFormatter = DateFormatter()
         
-        dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
+        dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
         let dateString = dateFormatter.string(from: date)
         
         if msgDate <= 0{

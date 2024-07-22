@@ -54,7 +54,7 @@ class TodayMainViewController: UIViewController {
                             self.model.sort { (item1, item2) -> Bool in
                                                     if item1.isDone == item2.isDone{
                                                         let dateFormatter = DateFormatter()
-                                                        dateFormatter.dateFormat = "dd MMMM yy HH:mm a"
+                                                        dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
                                                         let date1 = dateFormatter.date(from: item1.deadline) ?? Date()
                                                         let date2 = dateFormatter.date(from: item2.deadline) ?? Date()
                                                         return date1 < date2

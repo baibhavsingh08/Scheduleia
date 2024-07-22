@@ -67,7 +67,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59215688710000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="nd4-k5-hug" kind="show" id="dcQ-Os-75g"/>
@@ -92,9 +92,9 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                                     <backgroundConfiguration key="background">
-                                                        <color key="backgroundColor" red="0.32549020649999999" green="0.26666668059999998" blue="0.47843140360000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <segue destination="xPS-F5-2ie" kind="show" id="TkJ-AV-xwJ"/>
@@ -229,7 +229,7 @@
                                         <rect key="frame" x="0.0" y="631.66666666666663" width="393" height="210.33333333333337"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZP-5Y-HK8">
-                                                <rect key="frame" x="20" y="85" width="353" height="40"/>
+                                                <rect key="frame" x="20" y="86" width="353" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="cPp-We-sGd"/>
                                                 </constraints>
@@ -239,14 +239,14 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="x20-4d-Yh9"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-7E-Ovb">
-                                                <rect key="frame" x="121" y="0.0" width="151.33333333333337" height="34.333333333333336"/>
+                                                <rect key="frame" x="121.00000000000001" y="0.0" width="151.33333333333337" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forget Password"/>
                                                 <connections>
@@ -336,11 +336,11 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLk-L9-4Yd">
-                                <rect key="frame" x="253" y="689" width="120" height="60"/>
+                                <rect key="frame" x="313" y="709" width="60" height="40"/>
                                 <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="4tD-dC-Zeh"/>
-                                    <constraint firstAttribute="height" constant="60" id="Orx-0o-83c"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Jkp-Wj-UEn"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="UbO-Cu-PXy"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -389,16 +389,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-fY-sFg">
-                                <rect key="frame" x="10" y="103" width="152" height="50"/>
+                                <rect key="frame" x="10" y="103" width="146" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Ah-Ofe">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="96" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-aw-zv2">
-                                        <rect key="frame" x="102" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="96" y="0.0" width="50" height="50"/>
                                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="40"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -406,15 +406,15 @@
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-sC-Lb6">
-                                <rect key="frame" x="0.0" y="163" width="393" height="613"/>
+                                <rect key="frame" x="0.0" y="163" width="393" height="633"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yju-jM-R0K">
-                                <rect key="frame" x="253" y="689" width="120" height="60"/>
-                                <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="313" y="709" width="60" height="40"/>
+                                <color key="backgroundColor" red="0.40371241997936586" green="0.32915377114836109" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="REN-vf-wte"/>
-                                    <constraint firstAttribute="height" constant="60" id="goR-R5-Ipi"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="aBU-i2-cRt"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="f97-Ah-gUT"/>
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -457,6 +457,7 @@
                 <tabBarController id="xSP-zy-gJ1" customClass="MainTabBarController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="6uZ-kg-396">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="fx6-zQ-gg4">
+                            <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="logoutButtonpressed:" destination="xSP-zy-gJ1" id="vE9-zI-vD4"/>
                             </connections>
@@ -597,7 +598,7 @@
                                         <rect key="frame" x="0.0" y="606" width="393" height="202"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZGj-Zm-7Pw">
-                                                <rect key="frame" x="20" y="81" width="353" height="40"/>
+                                                <rect key="frame" x="20" y="82" width="353" height="38"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="bG3-5Z-aEu"/>
                                                 </constraints>
@@ -607,7 +608,7 @@
                                                     <backgroundConfiguration key="background">
                                                         <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="loginButtonPressed:" destination="nd4-k5-hug" eventType="touchUpInside" id="7uK-DB-xAf"/>
@@ -674,7 +675,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Je0-Ud-Z1w">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="79"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -687,40 +688,40 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sfl-el-mXQ">
                                         <rect key="frame" x="0.0" y="157.66666666666666" width="373" height="79"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSZ-gy-bcM">
                                         <rect key="frame" x="0.0" y="236.66666666666669" width="373" height="79"/>
                                         <color key="tintColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Priority" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-OW-9g5">
                                         <rect key="frame" x="0.0" y="315.66666666666669" width="373" height="78.666666666666686"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hr4-bu-N5p">
                                         <rect key="frame" x="0.0" y="394.33333333333331" width="373" height="79"/>
                                         <color key="tintColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date&amp;Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14j-eM-Pb4">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date &amp; Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14j-eM-Pb4">
                                         <rect key="frame" x="0.0" y="473.33333333333337" width="373" height="79"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BJb-Vg-QEK">
                                         <rect key="frame" x="0.0" y="552.33333333333337" width="373" height="78.666666666666629"/>
                                         <color key="tintColor" red="0.22745099660000001" green="0.49803921579999999" blue="0.58823531870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </label>
@@ -729,7 +730,7 @@
                                         <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Edit">
-                                            <fontDescription key="titleFontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="30"/>
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="30"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="editTask:" destination="TTb-Rk-6cS" eventType="touchUpInside" id="rue-mj-Bnf"/>
@@ -803,7 +804,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0y-CN-PzO">
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="57.666666666666664"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -819,7 +820,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCT-Og-8H8">
                                                         <rect key="frame" x="0.0" y="0.0" width="373" height="57.333333333333336"/>
-                                                        <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="25"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -846,19 +847,24 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="175"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88x-gF-vrf">
-                                                        <rect key="frame" x="0.0" y="118.99999999999994" width="56" height="56"/>
+                                                        <rect key="frame" x="0.0" y="134.99999999999994" width="40" height="40"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="56" id="2yw-GR-8sX"/>
-                                                            <constraint firstAttribute="height" constant="56" id="n4G-hZ-y9N"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Xxr-uJ-FAX"/>
+                                                            <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="aA5-hm-FzP"/>
+                                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="c7d-A5-fdl"/>
+                                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="tls-sX-DEi"/>
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-N5-Uus">
-                                                        <rect key="frame" x="96" y="140.66666666666669" width="277" height="34.333333333333343"/>
-                                                        <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="tintColor" systemColor="separatorColor"/>
+                                                        <rect key="frame" x="80" y="134.99999999999994" width="293" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Lpm-d8-cuO"/>
+                                                        </constraints>
+                                                        <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Set Priority">
-                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                            <color key="baseForegroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
@@ -867,6 +873,7 @@
                                                     <constraint firstItem="zBh-N5-Uus" firstAttribute="leading" secondItem="88x-gF-vrf" secondAttribute="trailing" constant="40" id="n7h-RO-dxM"/>
                                                     <constraint firstAttribute="trailing" secondItem="zBh-N5-Uus" secondAttribute="trailing" id="oOS-xZ-UaA"/>
                                                     <constraint firstItem="zBh-N5-Uus" firstAttribute="leading" secondItem="88x-gF-vrf" secondAttribute="trailing" constant="40" id="qh4-cE-c6q"/>
+                                                    <constraint firstItem="88x-gF-vrf" firstAttribute="leading" secondItem="Zga-nP-qDq" secondAttribute="leading" id="r6B-x3-B2Y"/>
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-P1-6Yy">
@@ -880,7 +887,9 @@
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Save"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Save">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        </buttonConfiguration>
                                                         <connections>
                                                             <action selector="saveTask:" destination="jKZ-N1-UOS" eventType="touchUpInside" id="8xc-kj-IOH"/>
                                                         </connections>
@@ -938,8 +947,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="up9-Mb-UHA"/>
-        <segue reference="Llu-ry-6an"/>
+        <segue reference="oKN-Og-p7m"/>
+        <segue reference="8Gu-nx-gnW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
