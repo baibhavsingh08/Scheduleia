@@ -2,10 +2,8 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-
 class TodayMainViewController: UIViewController {
     var model = [TodoModel]()
-    
     let db = Firestore.firestore()
     
     

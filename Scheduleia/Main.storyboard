@@ -243,7 +243,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-7E-Ovb">
-                                                <rect key="frame" x="121.00000000000001" y="0.0" width="151.33333333333337" height="34.333333333333336"/>
+                                                <rect key="frame" x="121" y="0.0" width="151.33333333333337" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Forget Password"/>
                                                 <connections>
@@ -279,7 +279,7 @@
                         <viewLayoutGuide key="safeArea" id="UlD-oC-ryX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="dnf-NH-KIs" firstAttribute="top" secondItem="5W6-D0-nH2" secondAttribute="top" id="OKk-8Y-GXW"/>
+                            <constraint firstItem="dnf-NH-KIs" firstAttribute="top" secondItem="5W6-D0-nH2" secondAttribute="top" id="SCF-Je-Kr0"/>
                             <constraint firstItem="UlD-oC-ryX" firstAttribute="trailing" secondItem="dnf-NH-KIs" secondAttribute="trailing" id="VdT-Hm-7jD"/>
                             <constraint firstItem="dnf-NH-KIs" firstAttribute="leading" secondItem="UlD-oC-ryX" secondAttribute="leading" id="f1m-18-PGQ"/>
                             <constraint firstItem="dnf-NH-KIs" firstAttribute="trailing" secondItem="UlD-oC-ryX" secondAttribute="trailing" id="uAe-BM-cWH"/>
@@ -901,7 +901,7 @@
         <image name="today" width="48" height="48"/>
         <image name="todo-icon-1024x1024-8p9cd4g6" width="1024" height="1024"/>
         <systemColor name="separatorColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
