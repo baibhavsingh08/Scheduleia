@@ -13,16 +13,6 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        registerButton.layer.cornerRadius = registerButton.frame.size.height/3
-        registerButton.clipsToBounds = true
-        
-        emailLabel.layer.cornerRadius = emailLabel.frame.size.height/2
-        emailLabel.clipsToBounds = true
-        
-        passwordLabel.layer.cornerRadius = passwordLabel.frame.size.height/2
-        passwordLabel.clipsToBounds = true
-        
         setupActivityIndicator()
     }
     

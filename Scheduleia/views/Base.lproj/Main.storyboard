@@ -168,7 +168,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-m9-u5N">
                                                 <rect key="frame" x="0.0" y="105.00000000000003" width="353" height="105.33333333333334"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="abc@123.com" borderStyle="bezel" minimumFontSize="50" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-pQ-NFh">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="abc@123.com" borderStyle="roundedRect" minimumFontSize="50" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="Tge-pQ-NFh">
                                                         <rect key="frame" x="0.0" y="32.666666666666629" width="353" height="40"/>
                                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -201,7 +201,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRL-ZZ-IoK">
                                                 <rect key="frame" x="0.0" y="105.33333333333337" width="353" height="105.33333333333331"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="123456" borderStyle="bezel" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-Ch-kHZ">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="9AJ-Ch-kHZ">
                                                         <rect key="frame" x="0.0" y="32.666666666666629" width="353" height="40"/>
                                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                                         <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
@@ -528,7 +528,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TT3-k2-ns0">
                                                 <rect key="frame" x="0.0" y="101" width="353" height="101"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="50" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="Skb-xV-gDc">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="50" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="Skb-xV-gDc">
                                                         <rect key="frame" x="0.0" y="30.666666666666686" width="353" height="40"/>
                                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                                         <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
@@ -560,7 +560,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blD-W5-a8p">
                                                 <rect key="frame" x="0.0" y="101" width="353" height="101"/>
                                                 <subviews>
-                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="5wA-wt-b2q">
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="30" sizingRule="oversize" translatesAutoresizingMaskIntoConstraints="NO" id="5wA-wt-b2q">
                                                         <rect key="frame" x="0.0" y="30.666666666666629" width="353" height="40"/>
                                                         <color key="backgroundColor" systemColor="separatorColor"/>
                                                         <rect key="contentStretch" x="0.20000000000000001" y="0.0" width="1" height="1"/>
@@ -936,7 +936,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oKN-Og-p7m"/>
-        <segue reference="Llu-ry-6an"/>
+        <segue reference="8Gu-nx-gnW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
