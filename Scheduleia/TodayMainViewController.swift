@@ -17,6 +17,7 @@ class TodayMainViewController: UIViewController {
         title = "Today's Tasks"
         navigationItem.hidesBackButton = true
         
+        
         tableView.delegate = self
         tableView.dataSource = self
         addButton.layer.cornerRadius = addButton.frame.size.width/4

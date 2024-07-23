@@ -453,19 +453,7 @@
         <scene sceneID="OEh-79-UO4">
             <objects>
                 <tabBarController id="xSP-zy-gJ1" customClass="MainTabBarController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="6uZ-kg-396">
-                        <rightBarButtonItems>
-                            <barButtonItem title="Logout" image="gearshape" catalog="system" id="fx6-zQ-gg4">
-                                <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="logoutButtonpressed:" destination="xSP-zy-gJ1" id="vE9-zI-vD4"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="filter" image="line.3.horizontal.decrease.circle" catalog="system" id="Rwg-Ra-YaQ">
-                                <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="6uZ-kg-396"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zmK-NT-LBp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -955,8 +943,6 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
-        <image name="gearshape" catalog="system" width="128" height="123"/>
-        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="today" width="48" height="48"/>
         <image name="todo-icon-1024x1024-8p9cd4g6" width="1024" height="1024"/>
         <namedColor name="AccentColor">
