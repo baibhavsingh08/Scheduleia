@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -303,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="2223.6641221374043" y="-259.15492957746483"/>
         </scene>
-        <!--All Tasks-->
+        <!--All tasks-->
         <scene sceneID="Bmh-Rn-oT2">
             <objects>
                 <viewController id="xgp-fq-BKZ" customClass="AllTaskMainViewController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
@@ -370,7 +371,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="All tasks" image="allTasks" selectedImage="allTasks" id="2fB-My-2xq"/>
-                    <navigationItem key="navigationItem" title="All Tasks" id="P11-Z2-cRd"/>
                     <connections>
                         <outlet property="addButton" destination="WLk-L9-4Yd" id="WxE-1a-j3g"/>
                         <outlet property="tableView" destination="mXQ-aC-TCQ" id="XHl-mU-fgo"/>
@@ -389,29 +389,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yx2-fY-sFg">
-                                <rect key="frame" x="10" y="103" width="149.33333333333334" height="50"/>
+                                <rect key="frame" x="10" y="103" width="99.333333333333329" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MP3-Ah-Ofe">
-                                        <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99.333333333333329" height="48"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                         <color key="textColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RXm-aw-zv2">
-                                        <rect key="frame" x="99.333333333333329" y="0.0" width="49.999999999999986" height="50"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="40"/>
-                                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-sC-Lb6">
-                                <rect key="frame" x="0.0" y="163" width="393" height="633"/>
+                                <rect key="frame" x="0.0" y="161" width="393" height="635"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yju-jM-R0K">
                                 <rect key="frame" x="313" y="709" width="60" height="40"/>
-                                <color key="backgroundColor" red="0.40371241997936586" green="0.32915377114836109" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="aBU-i2-cRt"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="f97-Ah-gUT"/>
@@ -440,8 +434,12 @@
                             <constraint firstItem="dTc-sC-Lb6" firstAttribute="leading" secondItem="0UM-91-kx4" secondAttribute="leading" id="pIm-jd-uYl"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tasks" image="today" selectedImage="today" id="pye-cq-Z8y"/>
-                    <navigationItem key="navigationItem" title="Today's Tasks" id="2aA-QK-Ovy"/>
+                    <tabBarItem key="tabBarItem" title="Tasks" image="today" selectedImage="today" id="ZZE-HT-eaE"/>
+                    <navigationItem key="navigationItem" title="Today's Tasks" id="2aA-QK-Ovy">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="tK2-rM-Qt6">
+                            <color key="tintColor" name="AccentColor"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="Yju-jM-R0K" id="17t-vQ-Ti6"/>
                         <outlet property="tableView" destination="dTc-sC-Lb6" id="KE5-HO-CIS"/>
@@ -449,19 +447,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRY-uV-Iq2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5688" y="-461"/>
+            <point key="canvasLocation" x="6614.5038167938928" y="-461.26760563380282"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="OEh-79-UO4">
             <objects>
                 <tabBarController id="xSP-zy-gJ1" customClass="MainTabBarController" customModule="Scheduleia" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="6uZ-kg-396">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="fx6-zQ-gg4">
-                            <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="logoutButtonpressed:" destination="xSP-zy-gJ1" id="vE9-zI-vD4"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Logout" image="gearshape" catalog="system" id="fx6-zQ-gg4">
+                                <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="logoutButtonpressed:" destination="xSP-zy-gJ1" id="vE9-zI-vD4"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="filter" image="line.3.horizontal.decrease.circle" catalog="system" id="Rwg-Ra-YaQ">
+                                <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zmK-NT-LBp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -475,8 +478,8 @@
                         </tabBarAppearance>
                     </tabBar>
                     <connections>
-                        <segue destination="wLZ-L1-7pn" kind="relationship" relationship="viewControllers" id="Xih-Pb-pMT"/>
-                        <segue destination="xgp-fq-BKZ" kind="relationship" relationship="viewControllers" id="mRb-ry-zga"/>
+                        <segue destination="wLZ-L1-7pn" kind="relationship" relationship="viewControllers" id="SHh-h9-0zk"/>
+                        <segue destination="xgp-fq-BKZ" kind="relationship" relationship="viewControllers" id="yax-L8-0lm"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mbD-Br-TLs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -783,7 +786,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="REg-cl-cuY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7983.9694656488546" y="-885.21126760563379"/>
+            <point key="canvasLocation" x="8910.6870229007636" y="-885.21126760563379"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="EfU-So-dMk">
@@ -943,17 +946,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DWY-PF-4XP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7983.9694656488546" y="-103.52112676056339"/>
+            <point key="canvasLocation" x="8910.6870229007636" y="-103.52112676056339"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="oKN-Og-p7m"/>
-        <segue reference="8Gu-nx-gnW"/>
+        <segue reference="Llu-ry-6an"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="allTasks" width="30" height="30"/>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
         <image name="today" width="48" height="48"/>
         <image name="todo-icon-1024x1024-8p9cd4g6" width="1024" height="1024"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="separatorColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

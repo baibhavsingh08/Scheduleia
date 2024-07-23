@@ -37,7 +37,7 @@ class AddTaskViewController: UIViewController {
         if let deadlineText, let dateInDate = dateFormatter.date(from: deadlineText) {
             dateSelector.setDate(dateInDate, animated: true)
         }
-                
+        
         if let priorityText {
             switch priorityText {
             case "Low":
@@ -47,11 +47,11 @@ class AddTaskViewController: UIViewController {
             case "Medium":
                 taskPriority = 1
                 imageView.backgroundColor = .yellow
-                            
+                
             case "High":
                 taskPriority = 2
                 imageView.backgroundColor = .red
-                                
+                
             default:
                 taskPriority = 0
                 imageView.backgroundColor = .blue
@@ -60,7 +60,7 @@ class AddTaskViewController: UIViewController {
         
         imageView.layer.cornerRadius = imageView.frame.size.width/2
         imageView.clipsToBounds = true
-    
+        
         let highPriority = UIAction(title: "High") { _ in
             self.taskPriority = 2
             self.imageView.backgroundColor = .red
@@ -84,61 +84,9 @@ class AddTaskViewController: UIViewController {
     @IBAction func saveTask(_ sender: Any) {
         if let id = docId {
             updateData(id)
-            
-            if let navigationController = self.navigationController {
-                let viewControllers = navigationController.viewControllers
-                let numberOfViewControllers = viewControllers.count
-                
-                if numberOfViewControllers >= 3 {
-                    let targetViewController = viewControllers[numberOfViewControllers - 3]
-                    let viewControllerName = String(describing: type(of: targetViewController))
-                    if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
-                        navigationController.popViewController(animated: true)
-                    } else {
-                        navigationController.popToViewController(targetViewController, animated: true)
-                    }
-                } else {
-                    navigationController.popViewController(animated: true)
-                }
-            }
+            navigateTwoViewsBack()
         } else {
-            if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
-                
-                let msgDate = Date().timeIntervalSince(msgDeadline)
-                let date = msgDeadline
-                let dateFormatter = DateFormatter()
-                
-                dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
-                let dateString = dateFormatter.string(from: date)
-                
-                if(msgDate <= 0){
-                    let newDoc = db.collection("todoData").document()
-                    newDoc.setData(["id": newDoc.documentID,
-                                    "decription": msgDescription,
-                                    "heading": msgHeading,
-                                    "deadline": dateString,
-                                    "priority": taskPriority,
-                                    "email": msgSender,
-                                    "isDone": false,
-                                    "time": msgDate,
-                                    "date": msgDeadline] , completion: nil)
-                } else {
-                    let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true)
-                }
-                
-            } else {
-                let alert = UIAlertController(title: "Error", message: "Heading is not optional", preferredStyle: .alert)
-                
-                let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                
-                alert.addAction(action)
-                self.present(alert, animated: true)
-            }
+            addNewTask()
             navigationController?.popViewController(animated: true)
         }
     }
@@ -186,6 +134,65 @@ class AddTaskViewController: UIViewController {
             
             alert.addAction(action)
             self.present(alert, animated: true)
+        }
+    }
+    
+    func addNewTask(){
+        if let msgHeading = headingLabel?.text, !msgHeading.isEmpty, let msgDescription = descriptionLabel?.text, let msgDeadline = dateSelector?.date,  let msgSender = Auth.auth().currentUser?.email{
+            
+            let msgDate = Date().timeIntervalSince(msgDeadline)
+            let date = msgDeadline
+            let dateFormatter = DateFormatter()
+            
+            dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
+            let dateString = dateFormatter.string(from: date)
+            
+            if(msgDate <= 0){
+                let newDoc = db.collection("todoData").document()
+                newDoc.setData(["id": newDoc.documentID,
+                                "decription": msgDescription,
+                                "heading": msgHeading,
+                                "deadline": dateString,
+                                "priority": taskPriority,
+                                "email": msgSender,
+                                "isDone": false,
+                                "time": msgDate,
+                                "date": msgDeadline] , completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Select a date that is not passed", preferredStyle: .alert)
+                
+                let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+            
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Heading is not optional", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+            
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
+    }
+    
+    func navigateTwoViewsBack() {
+        if let navigationController = self.navigationController {
+            let viewControllers = navigationController.viewControllers
+            let numberOfViewControllers = viewControllers.count
+            
+            if numberOfViewControllers >= 3 {
+                let targetViewController = viewControllers[numberOfViewControllers - 3]
+                let viewControllerName = String(describing: type(of: targetViewController))
+                if viewControllerName != "TodayMainViewController" && viewControllerName != "MainTabBarController"{
+                    navigationController.popViewController(animated: true)
+                } else {
+                    navigationController.popToViewController(targetViewController, animated: true)
+                }
+            } else {
+                navigationController.popViewController(animated: true)
+            }
         }
     }
 }

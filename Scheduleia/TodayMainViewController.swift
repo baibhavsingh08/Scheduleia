@@ -139,20 +139,27 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
             let task = model[indexPath.row]
             let docId = task.id
             
-            db.collection("todoData").document(docId).delete { error in
-                if let error = error {
-                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    
-                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                    
-                    alert.addAction(action)
-                    self.present(alert, animated: true)
-                } else {
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                }
-            }
+            let confirm = UIAlertController(title: "Are you sure, You want to Delete?", message: nil, preferredStyle: .alert)
+                    confirm.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {
+                        _ in
+                            self.db.collection("todoData").document(docId).delete { error in
+                                if let error = error {
+                                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                                    
+                                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                                    
+                                    alert.addAction(action)
+                                    self.present(alert, animated: true)
+                                } else {
+                                    DispatchQueue.main.async {
+                                        self.tableView.reloadData()
+                                    }
+                                }
+                            }
+                    }))
+                    confirm.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+                    self.present(confirm,animated: true)
+
         }
     }
 }
