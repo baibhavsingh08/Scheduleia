@@ -34,11 +34,18 @@ class MainTabBarController: UITabBarController {
                confirm.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
                self.present(confirm,animated: true)
            }
-           let themes = UIAction(title: "Themes (coming soon)") { _ in
+           let themes = UIAction(title: "Themes (coming soon...)") { _ in
                
            }
            let menu = UIMenu(title: "", children: [Logout,themes])
            gear.menu = menu
+        
+        
+        let filterAction = UIAction(title: "Filter (coming soon...)") { _ in
+        }
+        
+        let menu2 = UIMenu(title: "",children: [filterAction])
+        filter.menu = menu2
         
            navigationItem.rightBarButtonItems = [gear,filter]
     }

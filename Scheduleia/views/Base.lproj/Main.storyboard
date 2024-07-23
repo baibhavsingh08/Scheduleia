@@ -837,8 +837,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Zga-nP-qDq">
                                                 <rect key="frame" x="0.0" y="0.0" width="373" height="175"/>
                                                 <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ald-d5-PAf">
+                                                        <rect key="frame" x="0.0" y="46.999999999999943" width="90" height="128"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    </view>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="88x-gF-vrf">
-                                                        <rect key="frame" x="0.0" y="134.99999999999994" width="40" height="40"/>
+                                                        <rect key="frame" x="130" y="134.99999999999994" width="40" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="Xxr-uJ-FAX"/>
                                                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="aA5-hm-FzP"/>
@@ -847,25 +851,18 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBh-N5-Uus">
-                                                        <rect key="frame" x="80" y="134.99999999999994" width="293" height="40"/>
+                                                        <rect key="frame" x="210" y="134.99999999999994" width="163" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="Lpm-d8-cuO"/>
                                                         </constraints>
                                                         <color key="tintColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Set Priority">
-                                                            <fontDescription key="titleFontDescription" type="system" pointSize="25"/>
+                                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                                             <color key="baseForegroundColor" red="0.40784314269999999" green="0.33333334329999997" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="88x-gF-vrf" firstAttribute="leading" secondItem="Zga-nP-qDq" secondAttribute="leading" id="3YN-yi-K76"/>
-                                                    <constraint firstItem="zBh-N5-Uus" firstAttribute="leading" secondItem="88x-gF-vrf" secondAttribute="trailing" constant="40" id="n7h-RO-dxM"/>
-                                                    <constraint firstAttribute="trailing" secondItem="zBh-N5-Uus" secondAttribute="trailing" id="oOS-xZ-UaA"/>
-                                                    <constraint firstItem="zBh-N5-Uus" firstAttribute="leading" secondItem="88x-gF-vrf" secondAttribute="trailing" constant="40" id="qh4-cE-c6q"/>
-                                                    <constraint firstItem="88x-gF-vrf" firstAttribute="leading" secondItem="Zga-nP-qDq" secondAttribute="leading" id="r6B-x3-B2Y"/>
-                                                </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zFr-P1-6Yy">
                                                 <rect key="frame" x="0.0" y="194.99999999999994" width="373" height="175.33333333333331"/>
@@ -897,8 +894,8 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="zFr-P1-6Yy" secondAttribute="trailing" id="1ig-Lo-keh"/>
-                                            <constraint firstAttribute="trailing" secondItem="Zga-nP-qDq" secondAttribute="trailing" id="4ge-dg-vnm"/>
                                             <constraint firstItem="zFr-P1-6Yy" firstAttribute="leading" secondItem="Qwe-dI-1XE" secondAttribute="leading" id="VVF-x7-7Es"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zga-nP-qDq" secondAttribute="trailing" id="dWd-gL-Rgz"/>
                                             <constraint firstItem="Zga-nP-qDq" firstAttribute="leading" secondItem="Qwe-dI-1XE" secondAttribute="leading" id="mIp-CD-0P2"/>
                                         </constraints>
                                     </stackView>
