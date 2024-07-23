@@ -43,11 +43,13 @@ class AllTaskMainViewController: UIViewController {
                        if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
                            let time = data["time"]  as? Int
                            
-                           let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"]  as! String, isDone: (data["isDone"] as? Bool)! )
-                           
-                           self.model.append(item)
-                           DispatchQueue.main.async {
-                               self.tableView.reloadData()
+                           if(Auth.auth().currentUser?.email == email ){
+                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"]  as! String, isDone: (data["isDone"] as? Bool)! )
+                               
+                               self.model.append(item)
+                               DispatchQueue.main.async {
+                                   self.tableView.reloadData()
+                               }
                            }
                         }
                     }

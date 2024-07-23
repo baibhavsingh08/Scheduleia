@@ -136,7 +136,6 @@
 				B9FC3DA92C4E34AA00F5AAF2 /* views */,
 				B95B15182C46804500E6F104 /* View Model */,
 				B9ABDF802C464B0A00D2B493 /* Assets.xcassets */,
-				B9ABDF822C464B0A00D2B493 /* LaunchScreen.storyboard */,
 				B9ABDF852C464B0A00D2B493 /* Info.plist */,
 				B95B151B2C468B2400E6F104 /* GoogleService-Info.plist */,
 				B9ABDF7D2C464B0900D2B493 /* Scheduleia.xcdatamodeld */,
@@ -149,6 +148,7 @@
 			children = (
 				B9ABDF7A2C464B0900D2B493 /* Main.storyboard */,
 				B95B153B2C47910D00E6F104 /* TodoItemTableViewCell.xib */,
+				B9ABDF822C464B0A00D2B493 /* LaunchScreen.storyboard */,
 			);
 			path = views;
 			sourceTree = "<group>";

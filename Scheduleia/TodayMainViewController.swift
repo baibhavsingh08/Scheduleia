@@ -48,7 +48,7 @@ class TodayMainViewController: UIViewController {
                             let time = data["time"]  as? Int
                             
                             if(Auth.auth().currentUser?.email == email ){
-                                let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: (data["id"] as? String)! , isDone: (data["isDone"] as? Bool)!)
+                                let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: (data["id"] as? String) ?? "" , isDone: (data["isDone"] as? Bool) ?? false)
                                 
                                 self.model.append(item)
                             }
