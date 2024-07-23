@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Scheduleia
-//
-//  Created by Raramuri on 16/07/24.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
@@ -28,7 +21,6 @@ class ViewController: UIViewController {
     func animateTitle(){
         titleLabel.text = ""
         let titleName = "Scheduleia"
-        
         var index = 1.0;
         
         for x in titleName {

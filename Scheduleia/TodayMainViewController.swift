@@ -24,7 +24,6 @@ class TodayMainViewController: UIViewController {
         addButton.clipsToBounds = true
          
         tableView.register(UINib(nibName: "TodoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
         loadTodoData()
     }
     

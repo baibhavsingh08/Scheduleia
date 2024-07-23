@@ -17,7 +17,7 @@ class MainTabBarController: UITabBarController {
        filter.tintColor = UIColor.black
        navigationItem.rightBarButtonItems = [gear,filter]
         
-       let Logout = UIAction(title: "Logout", state: .off) { _ in
+       let logout = UIAction(title: "Logout", state: .off) { _ in
                let confirm = UIAlertController(title: "Are you sure, You want to log out?", message: nil, preferredStyle: .alert)
                confirm.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {
                    _ in
@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
            let themes = UIAction(title: "Themes (coming soon...)") { _ in
                
            }
-           let menu = UIMenu(title: "", children: [Logout,themes])
+           let menu = UIMenu(title: "", children: [logout,themes])
            gear.menu = menu
         
         
@@ -47,6 +47,6 @@ class MainTabBarController: UITabBarController {
         let menu2 = UIMenu(title: "",children: [filterAction])
         filter.menu = menu2
         
-           navigationItem.rightBarButtonItems = [gear,filter]
+        navigationItem.rightBarButtonItems = [gear,filter]
     }
 }

@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
             activityIndicator.center = view.center
             activityIndicator.hidesWhenStopped = true
             view.addSubview(activityIndicator)
-        }
+    }
     
     @IBAction func forgetButtonPressed(_ sender: Any) {
         activityIndicator.startAnimating()
