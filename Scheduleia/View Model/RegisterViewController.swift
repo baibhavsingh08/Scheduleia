@@ -18,10 +18,10 @@ class RegisterViewController: UIViewController {
     
     func setupActivityIndicator() {
         activityIndicator = UIActivityIndicatorView(style: .large)
-            activityIndicator.center = view.center
-            activityIndicator.hidesWhenStopped = true
-            view.addSubview(activityIndicator)
-        }
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+    }
     
     func strongPass(_ password: String) -> Bool {
         var hasUppercase = false
@@ -46,7 +46,7 @@ class RegisterViewController: UIViewController {
     @IBAction func registerButtonPressed(_ sender: Any) {
         activityIndicator.startAnimating()
         if let email = emailTextField.text , let password = passwordTextField.text {
-    
+            
             if(strongPass(password) ) {
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     
@@ -75,7 +75,7 @@ class RegisterViewController: UIViewController {
                 alert.addAction(action)
                 self.activityIndicator.stopAnimating()
                 self.present(alert, animated: true)
-                }
+            }
         }
     }
 }

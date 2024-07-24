@@ -1,7 +1,7 @@
 import UIKit
 
 class ShowTaskViewController: UIViewController {
-
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priorityLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!

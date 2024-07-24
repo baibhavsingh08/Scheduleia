@@ -5,7 +5,7 @@ import FirebaseFirestore
 class TodayMainViewController: UIViewController {
     var model = [TodoModel]()
     let db = Firestore.firestore()
-
+    
     var vc: UIViewController! = nil
     
     @IBOutlet weak var addButton: UIButton!
@@ -22,7 +22,7 @@ class TodayMainViewController: UIViewController {
         tableView.dataSource = self
         addButton.layer.cornerRadius = addButton.frame.size.width/4
         addButton.clipsToBounds = true
-         
+        
         tableView.register(UINib(nibName: "TodoItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         loadTodoData()
     }
@@ -52,15 +52,15 @@ class TodayMainViewController: UIViewController {
                                 self.model.append(item)
                             }
                             self.model.sort { (item1, item2) -> Bool in
-                                                    if item1.isDone == item2.isDone{
-                                                        let dateFormatter = DateFormatter()
-                                                        dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
-                                                        let date1 = dateFormatter.date(from: item1.deadline) ?? Date()
-                                                        let date2 = dateFormatter.date(from: item2.deadline) ?? Date()
-                                                        return date1 < date2
-                                                    }
-                                                    return !item1.isDone && item2.isDone
-                                            }
+                                if item1.isDone == item2.isDone{
+                                    let dateFormatter = DateFormatter()
+                                    dateFormatter.dateFormat = "dd MMMM yy | HH:mm a"
+                                    let date1 = dateFormatter.date(from: item1.deadline) ?? Date()
+                                    let date2 = dateFormatter.date(from: item2.deadline) ?? Date()
+                                    return date1 < date2
+                                }
+                                return !item1.isDone && item2.isDone
+                            }
                             
                             DispatchQueue.main.async {
                                 self.tableView.reloadData()
@@ -98,25 +98,25 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
-    
+        
         switch model[indexPath.row].priority {
         case 0 :
             cell.colorLabel.backgroundColor = .blue
             
         case 1:
             cell.colorLabel.backgroundColor = .yellow
-
+            
         case 2:
             cell.colorLabel.backgroundColor = .red
-
+            
         default:
             cell.colorLabel.backgroundColor = .blue
         }
-
+        
         cell.descriptionLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = model[indexPath.row].deadline
-      
+        
         cell.button.setImage(UIImage(systemName: "square"), for: .normal)
         cell.button.setImage(UIImage(systemName: "checkmark.square"), for: .selected)
         
@@ -130,7 +130,7 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
         cell.isDone = model[indexPath.row].isDone
         cell.priority = model[indexPath.row].priority
         cell.delegate = self
-
+        
         return cell
     }
     
@@ -140,26 +140,26 @@ extension TodayMainViewController: UITableViewDelegate, UITableViewDataSource  {
             let docId = task.id
             
             let confirm = UIAlertController(title: "Are you sure, You want to Delete?", message: nil, preferredStyle: .alert)
-                    confirm.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {
-                        _ in
-                            self.db.collection("todoData").document(docId).delete { error in
-                                if let error = error {
-                                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                                    
-                                    let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
-                                    
-                                    alert.addAction(action)
-                                    self.present(alert, animated: true)
-                                } else {
-                                    DispatchQueue.main.async {
-                                        self.tableView.reloadData()
-                                    }
-                                }
-                            }
-                    }))
-                    confirm.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
-                    self.present(confirm,animated: true)
-
+            confirm.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {
+                _ in
+                self.db.collection("todoData").document(docId).delete { error in
+                    if let error = error {
+                        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                        
+                        let action = UIAlertAction(title: "Okay", style: .cancel, handler: nil)
+                        
+                        alert.addAction(action)
+                        self.present(alert, animated: true)
+                    } else {
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+            }))
+            confirm.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            self.present(confirm,animated: true)
+            
         }
     }
 }
@@ -168,7 +168,7 @@ extension TodayMainViewController: DeleteTodoItemFromTable {
     
     func taskCompleted(_ cell: TodoItemTableViewCell) {
         guard let docId = cell.docId , let isDone = cell.isDone else { return }
-
+        
         db.collection("todoData").document(docId).updateData([
             "isDone": !isDone ]
         ) { error in
@@ -192,18 +192,18 @@ extension TodayMainViewController: DeleteTodoItemFromTable {
         var stringPriority: String
         
         switch cell.priority{
-            case 2:
+        case 2:
             stringPriority = "High"
-            case 1:
+        case 1:
             stringPriority = "Medium"
-            case 0:
+        case 0:
             stringPriority = "Low"
-            default:
+        default:
             stringPriority = "Unspecified"
         }
-
+        
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "edit") as? AddTaskViewController
-
+        
         vc?.descriptionText = cell.descriptionLabel.text
         vc?.deadlineText = cell.deadlineLabel.text
         vc?.headingText = cell.headingLabel.text

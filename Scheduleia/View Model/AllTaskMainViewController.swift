@@ -11,7 +11,7 @@ class AllTaskMainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigationItem.hidesBackButton = true
         tableView.delegate = self
         tableView.dataSource = self
@@ -40,17 +40,17 @@ class AllTaskMainViewController: UIViewController {
                     for doc in docs {
                         let data = doc.data()
                         
-                       if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
-                           let time = data["time"]  as? Int
-                           
-                           if(Auth.auth().currentUser?.email == email ){
-                               let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"]  as! String, isDone: (data["isDone"] as? Bool)! )
-                               
-                               self.model.append(item)
-                               DispatchQueue.main.async {
-                                   self.tableView.reloadData()
-                               }
-                           }
+                        if let heading = data["heading"] as? String, let decription = data["decription"] as? String, let deadline = data["deadline"] as? String, let priority = data["priority"] as? Int, let email = data["email"] as? String {
+                            let time = data["time"]  as? Int
+                            
+                            if(Auth.auth().currentUser?.email == email ){
+                                let item = TodoModel(decription: decription, heading: heading, deadline: deadline, priority: priority, email: email, time: time ?? 0, id: data["id"]  as! String, isDone: (data["isDone"] as? Bool)! )
+                                
+                                self.model.append(item)
+                                DispatchQueue.main.async {
+                                    self.tableView.reloadData()
+                                }
+                            }
                         }
                     }
                 }
@@ -73,22 +73,22 @@ extension AllTaskMainViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoItemTableViewCell
-    
+        
         switch model[indexPath.row].priority {
         case 0 :
             cell.colorLabel.backgroundColor = .blue
             
         case 1:
             cell.colorLabel.backgroundColor = .yellow
-
+            
         case 2:
             cell.colorLabel.backgroundColor = .red
-
+            
         default:
             cell.colorLabel.backgroundColor = .blue
-
+            
         }
-
+        
         cell.descriptionLabel.text = model[indexPath.row].decription
         cell.headingLabel.text = model[indexPath.row].heading
         cell.deadlineLabel.text = (model[indexPath.row].deadline)
